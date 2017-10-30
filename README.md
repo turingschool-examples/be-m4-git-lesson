@@ -5,6 +5,8 @@
 ![palette](http://g.recordit.co/Vs3VezqItS.gif)
 #### log in
 ![log in page](http://g.recordit.co/maALdkuAtt.gif)
+### user profile
+![user profile](http://g.recordit.co/gZHJedkQpg.gif)
 #### create user
 ![create user](http://g.recordit.co/gMVQ5COCtG.gif)
 #### cart
