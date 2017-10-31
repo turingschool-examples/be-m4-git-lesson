@@ -7,6 +7,6 @@ class CartsController < ApplicationController
   end
 
   def show
-    @items = @cart.contents.keys.map { |key| Item.find(key) }
+    @items = @cart.retreive_items
   end
 end
