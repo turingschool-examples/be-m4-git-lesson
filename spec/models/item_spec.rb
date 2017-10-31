@@ -12,7 +12,7 @@ RSpec.describe Item do
 												  status: 0,
 												  image_file_name: "FullSizeRender.jpg", 
 												  image_content_type: "image/jpeg", 
-												  image_file_size: 346843)
+												  image_file_size: 346843) 
 
 				expect(item).to be_valid
 			end
