@@ -1,6 +1,6 @@
 ### Description
 
-#### Fixes # (issue number, or otherwise: specify)
+#### closes # (issue number, or otherwise: specify)
 
 ## Proposed Changes
 
