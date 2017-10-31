@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe "User visits items index" do
+RSpec.describe "Visitor visits items index" do
   let(:category) { create(:category) }
 
-  scenario "user sees items on the page" do
+  scenario "visitor sees items on the page" do
     item = create(:item, category: category)
 
     visit items_path
