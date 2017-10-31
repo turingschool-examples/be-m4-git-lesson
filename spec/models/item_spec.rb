@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe Item do 
 	describe 'Validations' do
-
 		context 'valid attributes' do
 			it "is valid without a title" do
 				category = Category.create(title: "cactus")
