@@ -1,0 +1,5 @@
+<% @items.each do |item| %>
+  <%= item.title %>
+  <%= item.description %>
+  <div class="image"><%= image_tag item.image.url %></div>
+<% end %>
