@@ -7,7 +7,7 @@ RSpec.describe "User visits items index" do
     item = create(:item, category: category)
 
     visit items_path
-    save_and_open_page
+
     expect(current_path).to eq '/items'
     expect(page).to have_content(item.title)
     expect(page).to have_content(item.description)
