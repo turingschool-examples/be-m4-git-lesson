@@ -9,7 +9,7 @@ FactoryBot.define do
     end
 
     sequence :price do
-      Faker::Number.digit
+      Faker::Number.decimal(2)
     end
 
     image_file_name "FullSizeRender.jpg"

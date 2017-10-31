@@ -1,0 +1,8 @@
+<% @items.each do |item| %>
+  <%= image_tag item.image.url(:thumb) %>
+  <%= item.title %>
+  <%= item.description %>
+  <%= item.price %>
+<% end %>
+
+<h1>Total Price: <%= @cart.cart_total_price %></h1>
