@@ -14,6 +14,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
+gem 'paperclip'
 
 
 group :development, :test do
@@ -27,6 +28,7 @@ group :development, :test do
   gem 'faker'
   gem 'launchy'
   gem 'pry'
+  gem 'rspec-pride'
 end
 
 group :development do
