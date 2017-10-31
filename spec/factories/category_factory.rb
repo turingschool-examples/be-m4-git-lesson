@@ -1,5 +1,7 @@
 FactoryBot.define do
   factory :category do
-    title "Cactus"
+    sequence :title do
+      Faker::Hipster.word
+    end
   end
 end
