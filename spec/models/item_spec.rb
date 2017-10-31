@@ -7,15 +7,15 @@ RSpec.describe Item do
 			it "is valid without a title" do
 				category = Category.create(title: "cactus")
 				item = Item.create(title: "cactus",
-												description:	"It has flowers",
-												price: 10,
-												category: category,
-												status: 0,
-												image_file_name: "FullSizeRender.jpg", 
-												image_content_type: "image/jpeg", 
-												image_file_size: 346843)
+										  		description:	"It has flowers",
+											  	price: 10,
+												  category: category,
+												  status: 0,
+												  image_file_name: "FullSizeRender.jpg", 
+												  image_content_type: "image/jpeg", 
+												  image_file_size: 346843)
 
-					expect(item).to be_valid
+				expect(item).to be_valid
 			end
 		end
 

@@ -28,6 +28,7 @@ group :development, :test do
   gem 'faker'
   gem 'launchy'
   gem 'pry'
+  gem 'rspec-pride'
 end
 
 group :development do

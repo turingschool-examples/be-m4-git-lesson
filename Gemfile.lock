@@ -151,6 +151,10 @@ GEM
     rb-fsevent (0.10.2)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    rspec (3.7.0)
+      rspec-core (~> 3.7.0)
+      rspec-expectations (~> 3.7.0)
+      rspec-mocks (~> 3.7.0)
     rspec-core (3.7.0)
       rspec-support (~> 3.7.0)
     rspec-expectations (3.7.0)
@@ -159,6 +163,8 @@ GEM
     rspec-mocks (3.7.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.7.0)
+    rspec-pride (3.2.1)
+      rspec (~> 3.0)
     rspec-rails (3.7.1)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
@@ -238,6 +244,7 @@ DEPENDENCIES
   pry
   puma (~> 3.7)
   rails (~> 5.1.4)
+  rspec-pride
   rspec-rails (~> 3.6)
   sass-rails (~> 5.0)
   selenium-webdriver
