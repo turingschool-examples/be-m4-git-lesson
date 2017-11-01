@@ -21,5 +21,27 @@ RSpec.describe Cart, type: :model do
 
       expect(subject.cart_total_price).to eq(14)
     end
+
+    it '#decrease_quantity' do
+      subject.add_item(1)
+      subject.add_item(2)
+      
+      expect(subject.contents).to eq({'1' => 1, "2" => 1})
+
+      subject.decrease_quantity(2)
+
+      expect(subject.contents).to eq({'1' => 1})
+
+      subject.add_item(2)
+      subject.add_item(2)
+      
+      expect(subject.contents).to eq({'1' => 1, "2" => 2})
+      
+      subject.decrease_quantity(2)
+
+      expect(subject.contents).to eq({'1' => 1, "2" => 1})
+    end
+
+    
   end
 end

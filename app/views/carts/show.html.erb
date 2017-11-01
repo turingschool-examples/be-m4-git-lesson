@@ -3,6 +3,7 @@
   <%= item.title %>
   <%= item.description %>
   <%= item.price %>
+  <%= button_to "Remove", cart_path(item_id: item.id), method: :delete %>
 <% end %>
 
 <h1>Total Price: <%= @cart.cart_total_price %></h1>

@@ -9,4 +9,9 @@ class CartsController < ApplicationController
   def show
     @items = @cart.retreive_items
   end
+
+  def destroy
+    @cart.remove_item(params[:item_id])
+    redirect_to cart_path
+  end
 end
