@@ -13,7 +13,7 @@ class Cart
     contents.map { |key, value| Item.find(key).price * value }.sum
   end
 
-  def retreive_items
+  def retrieve_items
     contents.keys.map { |key| Item.find(key) }
   end
 
