@@ -1,0 +1,11 @@
+.alert-success {
+  color: green;
+  a {
+    text-decoration: none; 
+    color: green;
+    font-weight: 700;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+}
