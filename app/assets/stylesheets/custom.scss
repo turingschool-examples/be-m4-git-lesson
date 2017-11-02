@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700');
+$roboto : 'Roboto Slab', serif;
+$light  : 300;
+$bold   : 700;
+
 .alert-success {
   color: green;
   a {
-    text-decoration: none; 
+    text-decoration: none;
     color: green;
     font-weight: 700;
   }
@@ -9,3 +14,70 @@
     text-decoration: underline;
   }
 }
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  margin: 30px;
+  background: #E5FCF5;
+
+  nav {
+    background-color: #BAABBD;
+    padding: 25px;
+    margin-right: -30px;
+    margin-left: -30px;
+    position: relative;
+    top: 0;
+    width: 100%;
+
+    .store-name {
+      font-family: 'IM Fell Great Primer SC', serif;
+      font-size: 50px;
+      text-align: center;
+      margin-left: -30px;
+      color: #210124;
+    }
+
+    a {
+      text-decoration: none;
+      align-content: center;
+  
+    }
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h1, h3, h4 {
+    font-family: 'IM Fell Great Primer SC', serif;
+  }
+
+  .button_to {
+
+    input {
+    border-radius: 5px;
+    border-color: #150117;
+    border-width: thin;
+    background-color: #b3dec1;
+    }
+  }
+
+  .related {
+    display: flex;
+    .items {
+      justify-content: space-between;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  .item {
+    display: inline-block;
+    p {
+      margin: 20px;
+    }
+  }
+
+}
+

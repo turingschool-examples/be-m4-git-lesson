@@ -1,8 +1,8 @@
 <% @items.each.with_index do |item, index| %>
   <div class="items items-<%= index %>">
-    <%= item.title %>
-    <%= item.description %>
-    <div class="image"><%= image_tag item.image.url %></div>
+    <p><%= item.title %></p>
+    <p><%= item.description %></p>
+    <div class="image"><%= image_tag item.image.url(:thumb) %></div>
     <%= button_to "Add to Cart", cart_path(item_id: item.id) %>
   </div>
 <% end %>

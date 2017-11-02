@@ -1,6 +1,17 @@
 <h1><%= @item.title %></h1>
-<p><%= @item.description %></p>
+<h4><%= @item.category.title %></h4>
+<p>Details: <%= @item.description %></p>
 
-<%= image_tag @item.image.url, class: "image" %>
-<p><%= @item.price %></p>
+<%= image_tag @item.image.url(:medium), class: "image" %>
+<p>Price: $<%= @item.price %></p>
 <%= button_to "Add to Cart", cart_path(item_id: @item.id) %>
+
+  <h3>Related Items</h3>
+<div class="related">
+  <% @item.category.items.each do |item| %>
+    <div class="items">
+      <p><%= link_to "#{item.title}", item_path(item) %></p>
+      <%= image_tag item.image.url(:thumb), class: "image" %>
+    </div>
+  <% end %>
+</div>

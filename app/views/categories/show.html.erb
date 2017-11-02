@@ -1,5 +1,5 @@
 <h1><%= @category.title %></h1>
 <% @category.items.each do |item| %>
-  <%= item.title %>
-  <div class='image'><%= image_tag item.image.url %></div>
+  <%= link_to "#{item.title}", item_path(item) %>
+  <div class='image'><%= image_tag item.image.url(:medium) %></div>
 <% end %>
