@@ -24,13 +24,14 @@ RSpec.feature "User can see a login" do
                        password: "test",
                        address: "123 House Lane Denver, CO 80231")
     visit login_path
-    
+
     fill_in "session[email]", with: user.email
     fill_in "session[password]", with: user.password
 
     click_on  "Submit"
 
-    expect(current_path).to eq user_path(user)
+    expect(current_path).to eq dashboard_path
     expect(page).to have_content("Logged in as #{user.first_name}")
+    expect(page).to have_content("Log Out")
   end
 end
