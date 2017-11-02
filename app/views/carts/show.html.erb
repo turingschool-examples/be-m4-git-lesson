@@ -7,11 +7,13 @@
 
   <span>Price:<%= number_to_currency(item.price) %></span>
 
-  <span><%= button_to "+",cart_path(increment_me: item), method: :patch %>
-  Quantity: <%= @cart.count_of(item.id) %>
-  <%= button_to "-",cart_path(decrement_me: item), method: :patch %></span>
+  <div>
+    <%= button_to "+",cart_path(increment_me: item), method: :patch %>
+    <h3>Quantity: <%= @cart.count_of(item.id) %></h3>
+    <%= button_to "-",cart_path(decrement_me: item), method: :patch %>
+    <%= button_to "Remove", cart_path(item_id: item), method: :delete %>
+  </div>
 
-  <%= button_to "Remove", cart_path(item_id: item), method: :delete %>
 
   <span>Subtotal: <%= @cart.item_subtotal(item.id) %></span>
 </div>

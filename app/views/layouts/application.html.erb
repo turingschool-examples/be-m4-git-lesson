@@ -8,14 +8,12 @@
   </head>
 
   <body>
-    <br>
+    <nav>
+      <div class="store-name">Poisonous Plant Atrocities & Curiosities</div>
+      <%= link_to "Cart (#{@cart.total})", cart_path %>
       <% flash.each do |type, message| %>
         <%= content_tag :div, message.html_safe, class: "alert alert-#{type}" %>
       <% end %>
-    <br>
-    <nav>
-      <div class="store-name">Poisonous Plant Atrocities & Curiosities</div>
-      <%= link_to 'Cart', cart_path %>
     </nav>
     <%= yield %>
   </body>
