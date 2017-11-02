@@ -3,7 +3,7 @@
 <p>Details: <%= @item.description %></p>
 
 <%= image_tag @item.image.url(:medium), class: "image" %>
-<p>Price: $<%= @item.price %></p>
+<p>Price: <%= number_to_currency(@item.price) %></p>
 <%= button_to "Add to Cart", cart_path(item_id: @item.id) %>
 
   <h3>Related Items</h3>
