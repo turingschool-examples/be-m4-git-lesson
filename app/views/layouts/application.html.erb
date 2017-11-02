@@ -3,16 +3,11 @@
   <head>
     <title>LittleShop</title>
     <%= csrf_meta_tags %>
-    <%# google font here vvv %>
-    <link href="https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer+SC|Raleway" rel="stylesheet">    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%# end %>
-
-
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-
     <br>
       <% flash.each do |type, message| %>
         <%= content_tag :div, message.html_safe, class: "alert alert-#{type}" %>
