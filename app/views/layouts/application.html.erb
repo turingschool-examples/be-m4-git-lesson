@@ -3,20 +3,20 @@
   <head>
     <title>LittleShop</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-
     <br>
       <% flash.each do |type, message| %>
         <%= content_tag :div, message.html_safe, class: "alert alert-#{type}" %>
       <% end %>
     <br>
-
-    <%= link_to 'Cart', cart_path %>
+    <nav>
+      <div class="store-name">Poisonous Plant Atrocities & Curiosities</div>
+      <%= link_to 'Cart', cart_path %>
+    </nav>
     <%= yield %>
   </body>
 </html>

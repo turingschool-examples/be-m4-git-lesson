@@ -1,13 +1,20 @@
 <% @items.each do |item| %>
+<div class="item">
   <%= image_tag item.image.url(:thumb) %>
-  Title: <%= item.title %>
-  Description: <%= item.description %>
-  Price:<%= item.price %>
+
+  <span class="title">Title: <%= item.title %>
+  Description: <%= item.description %></span>
+
+  <span>Price:<%= item.price %></span>
+
+  <span><%= button_to "+",cart_path(increment_me: item), method: :patch %>
   Quantity: <%= @cart.count_of(item.id) %>
-  Subtotal: <%= @cart.item_subtotal(item.id) %>
-  <%= button_to "+",cart_path(increment_me: item), method: :patch  %>
-  <%= button_to "-",cart_path(decrement_me: item), method: :patch  %>
+  <%= button_to "-",cart_path(decrement_me: item), method: :patch %></span>
+
   <%= button_to "Remove", cart_path(item_id: item), method: :delete %>
+
+  <span>Subtotal: <%= @cart.item_subtotal(item.id) %></span>
+</div>
 <% end %>
 
-<h1>Total Price: <%= @cart.cart_total_price %></h1>
+<h1>Total Price: $<%= @cart.cart_total_price %></h1>
