@@ -16,7 +16,7 @@ RSpec.feature 'Visitor can adjust cart total' do
     click_button "Add to Cart"
     total = item1.price * 2
 
-    click_on "Cart"
+    click_link "Cart"
 
     expect(current_path).to eq(cart_path)
     expect(page).to have_content("Quantity: 2")
@@ -26,7 +26,7 @@ RSpec.feature 'Visitor can adjust cart total' do
   scenario 'visitor can increase item, total changes' do
     visit item_path(item1)
     click_button "Add to Cart"
-    click_on "Cart"
+    click_link "Cart"
 
     expect(current_path).to eq(cart_path)
     expect(page).to have_content("Total Price: $#{item1.price}")

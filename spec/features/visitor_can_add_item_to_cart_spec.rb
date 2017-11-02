@@ -8,7 +8,8 @@ RSpec.feature "Visitor adds Item to cart" do
     visit items_path
 
     click_on "Add to Cart"
-    click_on "Cart"
+
+    click_link "Cart"
 
     expect(current_path).to eq('/cart')
     expect(page).to have_content(item1.title)
@@ -40,7 +41,7 @@ RSpec.feature "Visitor adds Item to cart" do
       click_on 'Add to Cart'
     end
 
-    click_on "Cart"
+    click_link "Cart"
 
     expect(current_path).to eq('/cart')
     expect(page).to have_content(item.title)
