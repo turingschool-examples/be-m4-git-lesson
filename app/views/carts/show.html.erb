@@ -5,7 +5,7 @@
   <span class="title">Title: <%= item.title %>
   Description: <%= item.description %></span>
 
-  <span>Price:<%= item.price %></span>
+  <span>Price:<%= number_to_currency(item.price) %></span>
 
   <span><%= button_to "+",cart_path(increment_me: item), method: :patch %>
   Quantity: <%= @cart.count_of(item.id) %>
@@ -17,4 +17,4 @@
 </div>
 <% end %>
 
-<h1>Total Price: $<%= @cart.cart_total_price %></h1>
+<h1>Total Price: <%= number_to_currency(@cart.cart_total_price) %></h1>

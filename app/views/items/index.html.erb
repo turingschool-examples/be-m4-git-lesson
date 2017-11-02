@@ -2,6 +2,7 @@
   <div class="items items-<%= index %>">
     <p><%= item.title %></p>
     <p><%= item.description %></p>
+    <p><%= number_to_currency(item.price) %></p>
     <div class="image"><%= image_tag item.image.url(:thumb) %></div>
     <%= button_to "Add to Cart", cart_path(item_id: item.id) %>
   </div>
