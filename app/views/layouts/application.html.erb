@@ -3,8 +3,11 @@
   <head>
     <title>LittleShop</title>
     <%= csrf_meta_tags %>
+    <%# google font here vvv %>
+    <link href="https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer+SC|Raleway" rel="stylesheet">    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%# end %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -15,8 +18,10 @@
         <%= content_tag :div, message.html_safe, class: "alert alert-#{type}" %>
       <% end %>
     <br>
-
-    <%= link_to 'Cart', cart_path %>
+    <nav>
+      <div class="store-name">Poisonous Plant Atrocities & Curiosities</div>
+      <%= link_to 'Cart', cart_path %>
+    </nav>
     <%= yield %>
   </body>
 </html>
