@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resource  :cart
 
   get '/:category', to: 'categories#show', param: :slug, as: "category"
+  # get '/login', to: 'sessions#new'
+  # post '/login', to: 'session#create'
 end

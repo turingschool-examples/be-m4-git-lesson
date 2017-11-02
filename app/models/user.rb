@@ -1,0 +1,11 @@
+class User < ApplicationRecord
+  validates :email,
+            :first_name,
+            :last_name,
+            :address,
+            :role,
+            presence: true
+
+  validates_uniqueness_of :email
+
+end
