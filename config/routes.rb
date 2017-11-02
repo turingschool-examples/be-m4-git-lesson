@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'users#show'
   resources :items, only: [:index, :show]
   resource  :cart
+  resources :users, only: [:new, :create]
 
   get '/:category', to: 'categories#show', param: :slug, as: "category"
 end
