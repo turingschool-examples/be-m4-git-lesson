@@ -12,4 +12,9 @@ RSpec.describe User do
     it { should have_secure_password }
     it { should define_enum_for(:role) }
   end
+
+  describe "relationships" do
+    it { should have_many(:orders) }
+    it { should respond_to(:orders) }
+  end
 end
