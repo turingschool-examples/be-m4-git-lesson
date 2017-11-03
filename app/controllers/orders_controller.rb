@@ -4,4 +4,7 @@ class OrdersController < ApplicationController
     @orders = Order.all
   end
 
+  def new
+    p params
+  end
 end
