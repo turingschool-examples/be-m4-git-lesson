@@ -1,6 +1,6 @@
 ### Wireframin'
 #### Schema
-![schema](https://content.screencast.com/users/dionew1/folders/Jing/media/1170ebdb-f49a-4f1b-9948-c6ca50b5bd89/00000042.png)
+![schema](https://content.screencast.com/users/dionew1/folders/Jing/media/63bafd1d-3319-413e-9326-c94b8b0e28f0/00000044.png)
 #### Palette
 ![palette](http://g.recordit.co/Vs3VezqItS.gif)
 #### Log In
@@ -11,4 +11,3 @@
 ![create user](http://g.recordit.co/gMVQ5COCtG.gif)
 #### Cart
 ![index](http://g.recordit.co/YqznDMGdhY.gif)
-
