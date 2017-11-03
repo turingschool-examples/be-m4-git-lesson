@@ -1,7 +1,7 @@
 class Order < ApplicationRecord
   belongs_to :user
-  has_many   :itemorders
-  has_many   :items, through: :itemorders
+  has_many   :item_orders
+  has_many   :items, through: :item_orders
 
   validates :status, presence: true
 
