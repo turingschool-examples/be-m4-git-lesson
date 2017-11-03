@@ -9,5 +9,7 @@ RSpec.describe Order do
   describe 'relationships' do
     it { should belong_to(:user) }
     it { should respond_to(:user) }
+    it { should have_many(:items) }
+    it { should respond_to(:items) }
   end
 end
