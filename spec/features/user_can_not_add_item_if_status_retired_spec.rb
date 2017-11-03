@@ -7,7 +7,6 @@ RSpec.describe "User can't add item to cart" do
 
   scenario "if item status is retired, OBVIOUSLY" do
     visit item_path(item1)
-# save_and_open_page
 
     expect(page).to have_button("Add to Cart")
     expect(page).to have_content(item1.title)
