@@ -26,6 +26,13 @@ body {
 nav {
   background-color: $blackshadows;
   padding         : 25px;
+  .nav-username {
+    display: flex;
+    align-items: center;
+    a {
+      font-size: 14px;
+    }
+  }
   .store-name {
     font-family    : $primer;
     font-size      : 60px;
