@@ -3,5 +3,5 @@ class Order < ApplicationRecord
 
   validates :status, presence: true
 
-  enum status: [ :ordered, :paid, :cancelled, :completed ]
+  enum status: [ "ordered", "paid", "cancelled", "completed" ]
 end

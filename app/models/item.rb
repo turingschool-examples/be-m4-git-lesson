@@ -15,5 +15,5 @@ class Item < ApplicationRecord
 
   belongs_to :category
 
-  enum status: [ :active, :retired ]
+  enum status: [ "active", "retired" ]
 end
