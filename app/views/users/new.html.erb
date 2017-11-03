@@ -1,14 +1,15 @@
-<%= form_for @user do |f| %>
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %>
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %>
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-
-  <%= f.submit "Register" %>
-<% end %>
+<div class='login-page'>
+  <div class='form'>
+    <h1>Create an account</h1>
+    <div class='login-form'>
+      <%= form_for @user do |f| %>
+      <%= f.text_field :first_name, placeholder: :first_name %>
+      <%= f.text_field :last_name, placeholder: :last_name %>
+      <%= f.text_field :address, placeholder: :adress %>
+      <%= f.text_field :email, placeholder: :email %>
+      <%= f.password_field :password, placeholder: :password %>
+      <%= f.submit "Register", class: :submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
