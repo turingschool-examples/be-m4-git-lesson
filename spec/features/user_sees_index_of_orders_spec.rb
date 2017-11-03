@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "User sees an index of orders" do
-  xscenario "when user visits '/orders'" do
+  scenario "when user visits '/orders'" do
     user = User.create(first_name: "John",
                        last_name: "Doe",
                        email: "John@Doe.com",

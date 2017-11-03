@@ -18,5 +18,7 @@ RSpec.describe Item, type: :model do
   describe 'relationships' do
     it { should belong_to(:category) }
     it { should respond_to(:category) }
+    it { should have_many(:orders) }
+    it { should respond_to(:orders) }
   end
 end
