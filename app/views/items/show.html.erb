@@ -4,8 +4,11 @@
 
 <%= image_tag @item.image.url(:medium), class: "image" %>
 <p>Price: <%= number_to_currency(@item.price) %></p>
-<%= button_to "Add to Cart", cart_path(item_id: @item.id) %>
-
+  <% if @item.active? %>
+    <%= button_to "Add to Cart", cart_path(item_id: @item.id) %>
+  <% else %>
+    <%= button_to "Item Retired", cart_path(item_id: @item.id), :disabled => true %>
+  <% end %>
   <h3>Related Items</h3>
 <div class="related">
   <% @item.category.items.each do |item| %>
