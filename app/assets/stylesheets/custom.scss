@@ -1,74 +1,174 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700');
-@import url('https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer+SC|Raleway:400,600,700');
+@import 'variables';
+
+.landing {
+  height: 95vh;
+}
 
 .alert-success {
-  color: green;
+  color     : green;
   text-align: center;
   a {
     text-decoration: none;
-    color: green;
-    font-weight: 700;
+    color          : green;
+    font-weight    : 700;
   }
-  a:hover {
+  &:hover {
     text-decoration: underline;
   }
 }
 
 body {
   font-family: 'Raleway', sans-serif;
-  font-size: 14px;
-  background: #E5FCF5;
+  font-size  : 14px;
+  background : $bubbles;
+}
 
-  nav {
-    background-color: #BAABBD;
-    padding: 25px;
-    width: 100%;
+nav {
+  background-color: $blackshadows;
+  padding         : 25px;
+  .nav-username {
+    display: flex;
+    align-items: center;
+    a {
+      font-size: 14px;
+    }
+  }
+  .store-name {
+    font-family    : $primer;
+    font-size      : 60px;
+    text-align     : center;
+    color          : $middlepurple;
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    img {
+      height: 100px;
+    }
+  }
+  a {
+    text-decoration: none;
+    align-content  : center;
+    color          : $middlepurple;
+    &:hover {
+      color: $seafoamgreen;
+    }
+  }
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+  }
+}
 
-    .store-name {
-      font-family: 'IM Fell Great Primer SC', serif;
-      font-size: 50px;
-      text-align: center;
-      color: #210124;
+h1 {
+  font-size: 40px;
+}
+
+h1, h3, h4 {
+  font-family: $primer;
+}
+
+.button_to {
+  input {
+  border-radius   : 5px;
+  border-color    : $licorice;
+  border-width    : thin;
+  background-color: $seafoamgreen;
+  }
+}
+
+.related {
+  display: flex;
+  .items {
+    justify-content: space-between;
+    padding-left   : 20px;
+    padding-right  : 20px;
+  }
+}
+
+.item {
+  display: inline-block;
+  p {
+    margin: 20px;
+  }
+}
+
+.login-page {
+  display         : flex;
+  width           : 800px;
+  height          : 80vh;
+  margin          : auto;
+  align-items     : center;
+  justify-content : center;
+
+  .form {
+    z-index    : 1;
+    display    : flex;
+    position   : relative;
+    width      : 100%;
+    min-height : 500px;
+    padding    : 45px;
+    background : $middlepurple;
+    text-align : center;
+    align-items: center;
+    flex-direction: column;
+    h1 {
+      color: $seafoamgreen;
+    }
+    input {
+      box-sizing   : border-box;
+      width        : 100%;
+      margin       : 0 0 20px;
+      padding      : 20px;
+      border       : 0;
+      background   : #f2f2f2;
+      outline      : 0;
+      font-size    : 14px;
+      text-align   : center;
+      border-radius: 5px;
+      &:focus {
+        color: $xanadu;
+        border: 5px solid $xanadu;
+      }
+    }
+
+    span {
+      color: $xanadu;
     }
 
     a {
-      text-decoration: none;
-      align-content: center;
+    text-decoration: none;
+    text-transform : uppercase;
+    align-content  : center;
+    color          : $seafoamgreen;
+    &:hover {
+      color: $xanadu;
+      font-weight: $bold;
+      }
+    }
+
+    .submit {
+      width         : 100%;
+      margin-top    : 4px;
+      padding       : 20px;
+      color         : $licorice;
+      border        : 0;
+      background    :$bubbles;
+      text-transform: uppercase;
+      font-size     : 14px;
+      cursor        : pointer;
+    }
+    .submit:active,
+    .submit:focus,
+    .submit:hover {
+      color     : #22313F;
+      background: $xanadu;
     }
   }
-
-  h1 {
-    font-size: 40px;
-  }
-
-  h1, h3, h4 {
-    font-family: 'IM Fell Great Primer SC', serif;
-  }
-
-  .button_to {
-    input {
-    border-radius: 5px;
-    border-color: #150117;
-    border-width: thin;
-    background-color: #b3dec1;
-    }
-  }
-
-  .related {
-    display: flex;
-    .items {
-      justify-content: space-between;
-      padding-left: 20px;
-      padding-right: 20px;
-    }
-  }
-
-  .item {
-    display: inline-block;
-    p {
-      margin: 20px;
-    }
-  }
-
 }
+
+.login-form {
+  margin-top: 80px;
+}
+
 

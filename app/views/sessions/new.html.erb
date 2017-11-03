@@ -1,9 +1,13 @@
-<%= form_for(:session, url: login_path) do |f| %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.submit "Submit" %>
-<% end %>
-
-<%= link_to "Register", new_user_path %>
+<div class='login-page'>
+  <div class='form'>
+    <h1>Log In</h1>
+    <div class='login-form'>
+      <%= form_for(:session, url: login_path) do |f| %>
+        <%= f.text_field :email, placeholder: "EMAIL" %>
+        <%= f.password_field :password, placeholder: 'PASSWORD' %>
+        <%= f.submit "Submit", class: 'submit' %>
+      <% end %>
+      <span>Or, If you have no account: </span><%= link_to "Register", new_user_path %>
+    </div>
+  </div>
+</div>

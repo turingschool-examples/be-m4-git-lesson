@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
+      session[:user_id] = user.id
       redirect_to dashboard_path(id: user.id)
     else
       flash[:notice] = "Unable to create account!"
@@ -15,7 +16,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
   end
 
   private
