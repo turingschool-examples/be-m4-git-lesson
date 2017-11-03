@@ -1,7 +1,10 @@
 <h2>Your Orders</h2>
 
-<%=@orders.each do |order|%>
+<% @orders.reverse.each do |order|%>
   <div>
-    <%=order.id%>
+    Order Number: <%=order.id%>
+    Order Date: <%=order.format_date%>
+    <br>
+    <%= button_to "View Order", order_path(order), method: "get" %>
   <div>
 <%end%>

@@ -12,8 +12,10 @@ RSpec.describe "User sees an index of orders" do
     order2 = Order.create(status: 0, user: user)
 
     visit orders_path
-
+    
     expect(page).to have_content(order.id)
     expect(page).to have_content(order2.id)
+    expect(page).to have_content(order.created_at.strftime(format='%m/%d/%Y'))
+    expect(page).to have_content(order2.created_at.strftime(format='%m/%d/%Y'))
   end
 end
