@@ -5,6 +5,5 @@ RSpec.describe "User can visit root path" do
     visit root_path
 
     expect(current_path).to eq('/')
-    expect(page).to have_content("About Us")
   end
 end

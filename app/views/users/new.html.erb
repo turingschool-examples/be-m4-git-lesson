@@ -2,7 +2,7 @@
   <div class='form'>
     <h1>Create an account</h1>
     <div class='login-form'>
-      <%= form_for @user do |f| %>
+      <%= form_for User.new do |f| %>
       <%= f.text_field :first_name, placeholder: :first_name %>
       <%= f.text_field :last_name, placeholder: :last_name %>
       <%= f.text_field :address, placeholder: :adress %>

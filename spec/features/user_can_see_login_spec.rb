@@ -13,8 +13,6 @@ RSpec.feature "User can see a login" do
     click_on "Log In"
 
     expect(current_path).to eq(login_path)
-    expect(page).to have_content("Email")
-    expect(page).to have_content("Password")
   end
 
   scenario "registered user can log in" do
