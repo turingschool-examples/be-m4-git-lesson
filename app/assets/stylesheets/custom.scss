@@ -1,318 +1,374 @@
-@import 'variables';
+
+@import "variables";
 
 body {
-  font-family: 'Raleway', sans-serif;
-  font-size  : 14px;
-  background : $bubbles;
+  background  : $bubbles;
+  font-family : 'Raleway', sans-serif;
+  font-size   : 14px;
 }
 
-
 .landing {
-  height: 95vh;
+  height : 95vh;
 }
 
 .alert-success {
-  color     : green;
-  text-align: center;
+  color      : green;
+  text-align : center;
+
   a {
-    text-decoration : none;
-    color           : green;
     font-weight     : 700;
+    color           : green;
+    text-decoration : none;
   }
   &:hover {
-    text-decoration: underline;
+    text-decoration : underline;
   }
 }
 
 nav {
-  background-color: $blackshadows;
-  padding-bottom: 25px;
+  padding-bottom   : 25px;
+  background-color : $blackshadows;
 
   .nav-username {
-    display: flex;
-    align-items: center;
+    display     : flex;
+    align-items : center;
+
     a {
-      font-size: 14px;
+      font-size : 14px;
     }
   }
+
   .store-name {
+    display         : flex;
+
     font-family     : $primer;
     font-size       : 40px;
-    text-align      : center;
     color           : $middlepurple;
-    display         : flex;
+    text-align      : center;
+
     justify-content : center;
     align-items     : center;
     flex-direction  : column;
+
     img {
-      height: 150px;
-      max-width: 100%;
+      height    : 150px;
+      max-width : 100%;
+
       &:hover {
-        transition: all 0.3s;
-        transform: scale(1.1);
+        transition : all 0.3s;
+        transform  : scale(1.1);
       }
     }
   }
+
   a {
-    text-decoration: none;
-    align-content  : center;
-    color          : $middlepurple;
+    color           : $middlepurple;
+    text-decoration : none;
+
+    align-content   : center;
+
     &:hover {
-      color: $seafoamgreen;
+      color : $seafoamgreen;
     }
   }
+
   .nav-links {
-    display: flex;
-    justify-content: space-around;
-    font-size: 20px;
-    width: 50%;
-    margin-top: 40px;
+    display         : flex;
+
+    width           : 50%;
+    margin-top      : 40px;
+
+    font-size       : 20px;
+
+    justify-content : space-around;
   }
 }
 
 h1 {
-  font-size: 40px;
+  font-size : 40px;
 }
 
-
 h1, h3, h4 {
-  font-family: $roboto;
+  font-family : $roboto;
 }
 
 .button_to {
   input {
-    border: 2px solid $blackshadows;
-    border-radius   : 5px;
-    background-color: $seafoamgreen;
-    font-weight: 600;
+    background-color : $seafoamgreen;
+    font-weight      : 600;
+    border           : 2px solid $blackshadows;
+    border-radius    : 5px;
+
     &:hover {
-    background-color: $bubbles;
-    color: $licorice;
-    cursor: pointer;
+      cursor           : pointer;
+      background-color : $bubbles;
+      color            : $licorice;
     }
   }
 }
 
 .items-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 10px;
+  display         : flex;
+
+  padding         : 10px;
+
+  flex-wrap       : wrap;
+  justify-content : center;
+
   .items {
-    h3 {
-      font-family: $roboto;
-    }
-    border          : 2px solid $blackshadows;
+    display         : flex;
+
+    min-height      : 225px;
+    width           : 20%;
     margin          : 20px;
     padding         : 20px;
-    display         : flex;
+
+    border          : 2px solid $blackshadows;
+
     flex-direction  : column;
     justify-content : space-between;
     flex-wrap       : wrap;
     align-items     : center;
-    min-height      : 225px;
-    width           : 20%;
+
+    h3 {
+      font-family : $roboto;
+    }
   }
 }
 
 .categories-container {
-  text-align: center;
+  text-align : center;
+
   h1 {
-    margin: 10px;
-    font-size: 30px;
+    margin    : 10px;
+    font-size : 30px;
   }
   a {
-    text-decoration : none;
     margin          : 10px;
+
+    font-size       : 1.5em;
     color           : $middlepurple;
-    font-size: 1.5em;
+    text-decoration : none;
+
     &:hover {
-      color: $blackshadows;
-      font-weight: $semi;
+      font-weight : $semi;
+      color       : $blackshadows;
     }
   }
 }
 
 .login-page {
   display         : flex;
-  width           : 800px;
+
   height          : 80vh;
+  width           : 800px;
   margin          : auto;
+
   align-items     : center;
   justify-content : center;
 
   .form {
-    z-index        : 1;
-    display        : flex;
     position       : relative;
-    width          : 100%;
+    display        : flex;
+    z-index        : 1;
+
     min-height     : 500px;
+    width          : 100%;
     padding        : 45px;
+
     background     : $middlepurple;
     text-align     : center;
+
     align-items    : center;
     flex-direction : column;
+
     h1 {
-      color: $seafoamgreen;
+      color : $seafoamgreen;
     }
+
     input {
-      box-sizing   : border-box;
-      width        : 100%;
-      margin       : 0 0 20px;
-      padding      : 20px;
-      border       : 0;
-      background   : #f2f2f2;
-      outline      : 0;
-      font-size    : 14px;
-      text-align   : center;
-      border-radius: 5px;
+      box-sizing    : border-box;
+
+      width         : 100%;
+      margin        : 0 0 20px;
+      padding       : 20px;
+
+      background    : #f2f2f2;
+      font-size     : 14px;
+      text-align    : center;
+      border        : 0;
+      border-radius : 5px;
+      outline       : 0;
+
       &:focus {
-        color: $xanadu;
-        border: 5px solid $xanadu;
+        color  : $xanadu;
+        border : 5px solid $xanadu;
       }
     }
 
     span {
-      color: $xanadu;
+      color : $xanadu;
     }
 
     a {
-    text-decoration: none;
-    text-transform : uppercase;
-    align-content  : center;
-    color          : $seafoamgreen;
-    &:hover {
-      color: $xanadu;
-      font-weight: $bold;
+      color           : $seafoamgreen;
+      text-decoration : none;
+      text-transform  : uppercase;
+
+      align-content   : center;
+
+      &:hover {
+        font-weight : $bold;
+        color       : $xanadu;
       }
     }
 
     .submit {
-      width         : 100%;
-      margin-top    : 4px;
-      padding       : 20px;
-      color         : $licorice;
-      border        : 0;
-      background    :$bubbles;
-      text-transform: uppercase;
-      font-size     : 14px;
-      cursor        : pointer;
+      width          : 100%;
+      margin-top     : 4px;
+      padding        : 20px;
+
+      cursor         : pointer;
+      background     : $bubbles;
+      font-size      : 14px;
+      color          : $licorice;
+      text-transform : uppercase;
+      border         : 0;
     }
-    .submit:active,
-    .submit:focus,
-    .submit:hover {
-      color     : #22313F;
-      background: $xanadu;
+
+    .submit:active, .submit:focus, .submit:hover {
+      background : $xanadu;
+      color      : #22313F;
     }
   }
 }
 
 .login-form {
-  margin-top: 80px;
+  margin-top : 80px;
 }
 
-
 .category-title {
-  text-align: center;
-  margin: 30px;
+  margin     : 30px;
+  text-align : center;
 }
 
 .category-item {
-  text-decoration: none;
-  font-size      : 24px;
-  color          : $licorice;
-  margin         : 10px;
+  margin          : 10px;
+
+  font-size       : 24px;
+  color           : $licorice;
+  text-decoration : none;
+
   &:hover {
-    color       : $blackshadows;
     font-weight : 600;
+    color       : $blackshadows;
   }
 }
 
-
 .item-show-container {
-  display        : flex;
-  flex-direction : column;
-  align-content  : center;
-  justify-content: center;
-  text-align     : center;
+  display         : flex;
+
+  text-align      : center;
+
+  flex-direction  : column;
+  align-content   : center;
+  justify-content : center;
 
   .item-show {
     display         : flex;
     justify-content : center;
+
     .item-details {
-      align-items     : flex-start;
       display         : flex;
+
+      align-items     : flex-start;
       flex-direction  : column;
       justify-content : space-between;
     }
     div {
-      margin: 20px;
+      margin : 20px;
     }
   }
-
-  .related-item-container { @include related-items; }
+  .related-item-container {
+    @include related-items;
+  }
 }
 
 .user-profile {
-  text-align: center;
+  text-align : center;
   h1, h3 {
-    margin: 10px;
+    margin : 10px;
   }
 }
 
 .carts-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display        : flex;
+
+  flex-direction : column;
+  align-items    : center;
+
   a {
-    text-decoration: none;
-    color: $licorice;
+    color           : $licorice;
+    text-decoration : none;
+
     &:hover {
-      color       : $blackshadows;
       font-weight : 600;
+      color       : $blackshadows;
     }
   }
+
   table {
-    margin-top: 30px;
-    width: 75%;
+    width      : 75%;
+    margin-top : 30px;
+
     th {
-      font-size: 1.2em;
-      font-weight: $semi;
+      font-size   : 1.2em;
+      font-weight : $semi;
     }
     td {
-      text-align: center;
+      text-align : center;
     }
   }
-  .controls {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    * {
-      margin: 4px;
-    }
-  }
-  .cart-item {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 50%;
-    * {
-      margin-left: 10px;
-      margin-right: 10px;
-    }
 
+  .controls {
+    display         : flex;
+
+    align-items     : center;
+    justify-content : center;
+
+    * {
+      margin : 4px;
+    }
   }
+
+  .cart-item {
+    display         : flex;
+
+    width           : 50%;
+
+    justify-content : flex-start;
+    align-items     : center;
+
+    * {
+      margin-right : 10px;
+      margin-left  : 10px;
+    }
+  }
+
   span {
-    font-weight: $semi;
+    font-weight : $semi;
   }
+
   .checkout {
-    width: 200px;
-    height: 50px;
-    font-size: 1.5em;
-    background-color: $bubbles;
-    margin: 10px;
+    height           : 50px;
+    width            : 200px;
+    margin           : 10px;
+
+    background-color : $bubbles;
+    font-size        : 1.5em;
+
     &:hover {
-      border: 5px solid $seafoamgreen;
+      border : 5px solid $seafoamgreen;
     }
   }
 }
