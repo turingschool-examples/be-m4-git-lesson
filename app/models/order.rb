@@ -10,4 +10,8 @@ class Order < ApplicationRecord
   def format_date
     created_at.strftime(format='%m/%d/%Y')
   end
+
+  def create_item_order(contents)
+    byebug
+  end
 end

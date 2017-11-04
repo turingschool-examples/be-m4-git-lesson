@@ -17,7 +17,7 @@
 
   <span>Subtotal: <%= @cart.item_subtotal(item.id) %></span>
   <% if current_user %>
-    <%= button_to "Checkout", new_order_path(current_user), method: :get %>
+    <%= button_to "Checkout", orders_path(cart: @cart.contents)%>
   <% else %>
   <%= link_to "You must login or register to checkout", login_path %>
   <% end %>

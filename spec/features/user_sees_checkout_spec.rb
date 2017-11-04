@@ -8,19 +8,38 @@ RSpec.feature "Visitor visits '/cart'" do
     visit items_path
 
     click_on "Add to Cart"
-
     click_link "Cart"
 
     expect(page).to have_link("You must login or register to checkout")
   end
 
+  scenario "registered user sees checkout button" do
+    user = create(:user)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+    visit items_path
+
+    click_on "Add to Cart"
+    click_link "Cart"
+
+    expect(page).to have_button("Checkout")
+  end
+
+  scenario "registered user sees orders placed" do
+    user = create(:user)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+    visit items_path
+
+    click_on "Add to Cart"
+    click_link "Cart"
+    click_on "Checkout"
+
+
+    expect(current_path).to eq orders_path
+    expect(page).to have_content("Order was successfully placed")
+    expect(page).to have_button("Checkout")
+  end
 end
-
-
-
-# As a visitor When I add items to my cart
-# And I visit “/cart” And I click “Login or Register to Checkout”
-# Then I should be required to login
 
 # When I am logged in And I visit my cart
 # And when I click “Checkout”
