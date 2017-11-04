@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   delete '/logout',    to: 'sessions#destroy'
   get    '/dashboard', to: 'users#show'
 
-  resources :items, only: [:index, :show]
   resource  :cart
-  resources :users, only: [:new, :create]
-  resources :orders, only: [:index, :show]
+  resources :items,  only: [:index, :show]
+  resources :users,  only: [:new, :create]
+  resources :orders, only: [:index, :show, :new]
 
   get '/:category', to: 'categories#show', param: :slug, as: "category"
 end
