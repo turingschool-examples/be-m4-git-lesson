@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resource :dashboard, only: :show, controller: :dashboard
   end
-
-  get '/:category', to: 'categories#show', param: :slug, as: "category"
+  
+  get '/categories', to: 'categories#index'
+  get '/:category',  to: 'categories#show', param: :slug, as: "category"
 end
