@@ -5,8 +5,10 @@ class OrdersController < ApplicationController
   end
 
   def create
-    Order.new
-    if Order.save
+    order = Order.new(user: current_user)
+    if order.save
+      items = Item.find(params[:cart].keys.map { |key| key.to_i })
+      items.each { |item| order.items << item }
       flash[:success] = "Order was successfully placed"
       redirect_to orders_path
     else

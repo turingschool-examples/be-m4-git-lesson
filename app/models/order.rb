@@ -1,7 +1,7 @@
 class Order < ApplicationRecord
   belongs_to :user
-  has_many   :item_orders
-  has_many   :items, through: :item_orders
+  has_many   :order_items
+  has_many   :items, through: :order_items
 
   validates :status, presence: true
 
@@ -11,7 +11,4 @@ class Order < ApplicationRecord
     created_at.strftime(format='%m/%d/%Y')
   end
 
-  def create_item_order(contents)
-    byebug
-  end
 end
