@@ -1,7 +1,6 @@
 class OrderItem < ApplicationRecord
-  belongs_to :item
-  belongs_to :order
-
+  belongs_to  :item
+  belongs_to  :order
   before_save :get_price
 
   def get_price

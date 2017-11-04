@@ -1,7 +1,8 @@
 class OrdersController < ApplicationController
+  before_action :check_user
 
   def index
-    @orders = Order.order(:id).reverse_order
+    @orders = current_user.orders.reverse_order
   end
 
   def create
@@ -15,5 +16,10 @@ class OrdersController < ApplicationController
       flash[:error] = "An error occured please replace your order."
       redirect_to cart_path
     end
+  end
+
+  private
+  def check_user
+    redirect_to login_path if !current_user
   end
 end
