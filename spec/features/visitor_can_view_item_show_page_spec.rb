@@ -16,6 +16,6 @@ RSpec.describe 'Visitor can see item show page' do
     expect(page).to have_content(item1.description)
     expect(page).to have_css(".image")
     expect(page).to have_content(item1.price)
-    expect(page).to have_button("Add to Cart")    
+    expect(page).to have_button("Add to Cart")
   end
 end

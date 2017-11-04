@@ -14,7 +14,7 @@
   <% @item.category.items.each do |item| %>
     <div class="items">
       <p><%= link_to "#{item.title}", item_path(item) %></p>
-      <%= image_tag item.image.url(:thumb), class: "image" %>
+      <%= link_to image_tag(item.image.url(:thumb)), item_path(item), class: "image" %>
     </div>
   <% end %>
 </div>
