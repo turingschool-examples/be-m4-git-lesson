@@ -36,14 +36,14 @@ nav {
     }
   }
   .store-name {
-    font-family    : $primer;
-    font-size      : 40px;
-    text-align     : center;
-    color          : $middlepurple;
-    display        : flex;
-    justify-content: center;
-    align-items    : center;
-    flex-direction: column;
+    font-family     : $primer;
+    font-size       : 40px;
+    text-align      : center;
+    color           : $middlepurple;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    flex-direction  : column;
     img {
       height: 150px;
       max-width: 100%;
@@ -102,17 +102,15 @@ h1, h3, h4 {
     h3 {
       font-family: $roboto;
     }
-    border: 2px solid $blackshadows;
-    margin: 20px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 225px;
-
-    width: 20%;
+    border         : 2px solid $blackshadows;
+    margin         : 20px;
+    padding        : 20px;
+    display        : flex;
+    flex-direction : column;
+    flex-wrap      : wrap;
+    align-items    : center;
+    min-height     : 225px;
+    width          : 20%;
   }
 }
 
@@ -132,16 +130,16 @@ h1, h3, h4 {
   justify-content : center;
 
   .form {
-    z-index    : 1;
-    display    : flex;
-    position   : relative;
-    width      : 100%;
-    min-height : 500px;
-    padding    : 45px;
-    background : $middlepurple;
-    text-align : center;
-    align-items: center;
-    flex-direction: column;
+    z-index        : 1;
+    display        : flex;
+    position       : relative;
+    width          : 100%;
+    min-height     : 500px;
+    padding        : 45px;
+    background     : $middlepurple;
+    text-align     : center;
+    align-items    : center;
+    flex-direction : column;
     h1 {
       color: $seafoamgreen;
     }
@@ -233,37 +231,12 @@ h1, h3, h4 {
       align-items: flex-start;
       display: flex;
       flex-direction: column;
-      justify-content: space-between; 
+      justify-content: space-between;
     }
     div {
       margin: 20px;
     }
   }
 
-  .related-item-container {
-    align-self: center;
-    h3 {
-      margin: 20px;
-      font-size: 1.3em;
-    }
-    .related {
-      display: flex;
-      justify-content: center;
-    }
-    .items {
-      display: flex;
-      flex-direction: column;
-      color: mediumaquamarine;
-      min-height: 150px;
-    }
-    a {
-      text-decoration: none;
-      align-content: center;
-      color: $middlepurple;
-      margin: 10px;
-      &:hover {
-        color: $seafoamgreen;
-      }
-    }
-  }
+  .related-item-container { @include related-items; }
 }
