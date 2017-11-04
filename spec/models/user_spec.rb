@@ -13,6 +13,61 @@ RSpec.describe User do
     it { should define_enum_for(:role) }
   end
 
+  describe "user roles" do
+    it 'user can be created as a default user' do
+      user = User.create(first_name: 'Django',
+                         last_name: 'Unchained',
+                         email: 'cool',
+                         address: 'wherever',
+                         password: 'django',
+                         role: 0)
+
+      expect(user).to be_valid
+      expect(user.role).to eq("default")
+      expect(user.default?).to be_truthy
+    end
+
+    it "user can be created as an admin" do
+      user = User.create(first_name: 'Django',
+                         last_name: 'Unchained',
+                         email: 'cool',
+                         address: 'wherever',
+                         password: 'django',
+                         role: 1)
+
+      expect(user).to be_valid
+      expect(user.role).to eq("admin")
+      expect(user.admin?).to be_truthy
+    end
+
+    it "user defaulted to default user" do
+      user = User.create(first_name: 'Django',
+                         last_name: 'Unchained',
+                         email: 'cool',
+                         address: 'wherever',
+                         password: 'django')
+
+      expect(user).to be_valid
+      expect(user.role).to eq("default")
+      expect(user.default?).to be_truthy
+    end
+
+    it 'user can be converted from default to admin' do
+     user = User.create(first_name: 'Django',
+                         last_name: 'Unchained',
+                         email: 'cool',
+                         address: 'wherever',
+                         password: 'django')
+
+      expect(user).to be_valid
+      expect(user.role).to eq("default")
+      expect(user.default?).to be_truthy
+
+      user.admin!
+      expect(user.role).to eq('admin')
+    end
+  end
+
   describe "relationships" do
     it { should have_many(:orders) }
     it { should respond_to(:orders) }
