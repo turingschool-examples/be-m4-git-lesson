@@ -13,4 +13,32 @@ $roboto  : 'Roboto Slab', serif;
 $raleway : 'Raleway', sans-serif;
 $primer  : 'IM Fell Great Primer SC',serif;
 $light   : 300;
+$semi    : 600;
 $bold    : 700;
+
+@mixin related-items {
+  align-self : center;
+  h3 {
+    margin    : 20px;
+    font-size : 1.3em;
+  }
+  .related {
+    display         : flex;
+    justify-content : center;
+  }
+  .items {
+    display        : flex;
+    flex-direction : column;
+    color          : mediumaquamarine;
+    min-height     : 150px;
+  }
+  a {
+    text-decoration: none;
+    align-content  : center;
+    color          : $middlepurple;
+    margin         : 10px;
+    &:hover {
+      color: $seafoamgreen;
+    }
+  }
+}

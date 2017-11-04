@@ -36,14 +36,14 @@ nav {
     }
   }
   .store-name {
-    font-family    : $primer;
-    font-size      : 40px;
-    text-align     : center;
-    color          : $middlepurple;
-    display        : flex;
-    justify-content: center;
-    align-items    : center;
-    flex-direction: column;
+    font-family     : $primer;
+    font-size       : 40px;
+    text-align      : center;
+    color           : $middlepurple;
+    display         : flex;
+    justify-content : center;
+    align-items     : center;
+    flex-direction  : column;
     img {
       height: 150px;
       max-width: 100%;
@@ -76,7 +76,7 @@ h1 {
 
 
 h1, h3, h4 {
-  font-family: $primer;
+  font-family: $roboto;
 }
 
 .button_to {
@@ -102,27 +102,16 @@ h1, h3, h4 {
     h3 {
       font-family: $roboto;
     }
-    border: 2px solid $blackshadows;
-    margin: 20px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    border         : 2px solid $blackshadows;
+    margin         : 20px;
+    padding        : 20px;
+    display        : flex;
+    flex-direction : column;
     justify-content: space-between;
-    align-items: center;
-    min-height: 225px;
-
-    width: 20%;
-  }
-}
-
-.related {
-  display: flex;
-  .items {
-    justify-content: space-between;
-    padding-left   : 20px;
-    padding-right  : 20px;
-    color: mediumaquamarine;
+    flex-wrap      : wrap;
+    align-items    : center;
+    min-height     : 225px;
+    width          : 20%;
   }
 }
 
@@ -130,6 +119,24 @@ h1, h3, h4 {
   display: inline-block;
   p {
     margin: 20px;
+  }
+}
+
+.categories-container {
+  text-align: center;
+  h1 {
+    margin: 10px;
+    font-size: 30px;
+  }
+  a {
+    text-decoration: none;
+    margin: 10px;
+    color          : $middlepurple;
+    font-size: 1.5em;
+    &:hover {
+      color: $blackshadows;
+      font-weight: $semi;
+    }
   }
 }
 
@@ -142,16 +149,16 @@ h1, h3, h4 {
   justify-content : center;
 
   .form {
-    z-index    : 1;
-    display    : flex;
-    position   : relative;
-    width      : 100%;
-    min-height : 500px;
-    padding    : 45px;
-    background : $middlepurple;
-    text-align : center;
-    align-items: center;
-    flex-direction: column;
+    z-index        : 1;
+    display        : flex;
+    position       : relative;
+    width          : 100%;
+    min-height     : 500px;
+    padding        : 45px;
+    background     : $middlepurple;
+    text-align     : center;
+    align-items    : center;
+    flex-direction : column;
     h1 {
       color: $seafoamgreen;
     }
@@ -212,4 +219,43 @@ h1, h3, h4 {
 }
 
 
+.category-title {
+  text-align: center;
+  margin: 30px;
+}
 
+.category-item {
+  text-decoration: none;
+  font-size      : 24px;
+  color          : $licorice;
+  margin         : 10px;
+  &:hover {
+    color       : $blackshadows;
+    font-weight : 600;
+  }
+}
+
+
+.item-show-container {
+  display        : flex;
+  flex-direction : column;
+  align-content  : center;
+  justify-content: center;
+  text-align     : center;
+
+  .item-show {
+    display         : flex;
+    justify-content : center;
+    .item-details {
+      align-items     : flex-start;
+      display         : flex;
+      flex-direction  : column;
+      justify-content : space-between;
+    }
+    div {
+      margin: 20px;
+    }
+  }
+
+  .related-item-container { @include related-items; }
+}
