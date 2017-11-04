@@ -12,11 +12,11 @@ RSpec.describe 'Visitor can change item quantity of cart' do
   scenario 'visitor can increase item quantity' do
     visit cart_path(item_id: item1.id)
 
-    expect(page).to have_content("Quantity: 1")
+    expect(page).to have_content("1")
 
     click_button "+"
 
-    expect(page).to have_content("Quantity: 2")
+    expect(page).to have_content("2")
   end
 
   scenario 'visitor can decrease item quantity' do
@@ -25,11 +25,11 @@ RSpec.describe 'Visitor can change item quantity of cart' do
 
     visit cart_path(item_id: item1.id)
 
-    expect(page).to have_content("Quantity: 3")
+    expect(page).to have_content("3")
 
     click_button "-"
 
-    expect(page).to have_content("Quantity: 2")
+    expect(page).to have_content("2")
   end
 
   scenario 'visitor can remove an item from cart' do

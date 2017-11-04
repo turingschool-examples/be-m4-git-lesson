@@ -4,14 +4,6 @@ RSpec.feature "Visitor visits '/cart'" do
   let!(:category1) { create(:category) }
   let!(:item1) { create(:item, category: category1) }
 
-  scenario "visitor must login or register to checkout" do
-    visit items_path
-
-    click_on "Add to Cart"
-    click_link "Cart"
-
-    expect(page).to have_link("You must login or register to checkout")
-  end
 
   scenario "registered user sees checkout button" do
     user = create(:user)

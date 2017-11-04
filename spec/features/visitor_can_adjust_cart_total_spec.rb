@@ -19,7 +19,7 @@ RSpec.feature 'Visitor can adjust cart total' do
     click_link "Cart"
 
     expect(current_path).to eq(cart_path)
-    expect(page).to have_content("Quantity: 2")
+    expect(page).to have_content("2")
     expect(page).to have_content("Total Price: $#{total}")
   end
 
