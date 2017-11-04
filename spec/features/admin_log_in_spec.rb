@@ -17,4 +17,13 @@ RSpec.feature "An admin logs in" do
 
     expect(current_path).to eq(admin_dashboard_path)
   end
+
+  context "as a non admin" do
+    it 'i see a 404' do
+      visit admin_dashboard_path
+
+      expect(page.status_code).to eq(404)
+      expect(page).to have_content("The page you were looking for doesn't exist.")
+    end
+  end
 end
