@@ -3,7 +3,7 @@
     <p><%= item.title %></p>
     <p><%= item.description %></p>
     <p><%= number_to_currency(item.price) %></p>
-    <div class="image"><%= image_tag item.image.url(:thumb) %></div>
+    <div class="image"><%= link_to image_tag(item.image.url(:thumb)), item_path(item) %></div>
     <%= button_to "Add to Cart", cart_path(item_id: item.id) %>
   </div>
 <% end %>
