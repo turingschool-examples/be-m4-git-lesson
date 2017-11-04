@@ -11,5 +11,9 @@ Rails.application.routes.draw do
   resources :users,  only: [:new, :create]
   resources :orders, only: [:index, :show, :new]
 
+  namespace :admin do
+    resource :dashboard, only: :show, controller: :dashboard
+  end
+
   get '/:category', to: 'categories#show', param: :slug, as: "category"
 end
