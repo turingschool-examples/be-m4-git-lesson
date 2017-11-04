@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :check_user, only: :show
 
   def new
     @user = User.new
@@ -22,6 +23,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:email, :last_name, :first_name, :address, :password)
+  end
+
+  def check_user
+    redirect_to login_path if !current_user
   end
 
 end
