@@ -11,8 +11,8 @@
    <% @orders.reverse.each do |order|%>
    <tbody>
      <tr>
-       <td><%=order.id%></td>
-       <td><%=order.format_date%></td>
+       <td><%= order.id %></td>
+       <td><%= order.format_date %></td>
        <td><%= button_to "View Order", order_path(order), method: "get" %></td>
      </tr>
    <tbody>
