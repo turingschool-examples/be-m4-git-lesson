@@ -9,12 +9,12 @@ Rails.application.routes.draw do
   resource  :cart
   resources :items,  only: [:index, :show]
   resources :users,  only: [:new, :create]
-  resources :orders, only: [:index, :show, :new]
+  resources :orders, only: [:index, :show, :create]
 
   namespace :admin do
     resource :dashboard, only: :show, controller: :dashboard
   end
-
+  
   get '/categories', to: 'categories#index'
   get '/:category',  to: 'categories#show', param: :slug, as: "category"
 end
