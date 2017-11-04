@@ -76,7 +76,7 @@ h1 {
 
 
 h1, h3, h4 {
-  font-family: $primer;
+  font-family: $roboto;
 }
 
 .button_to {
@@ -113,16 +113,6 @@ h1, h3, h4 {
     min-height: 225px;
 
     width: 20%;
-  }
-}
-
-.related {
-  display: flex;
-  .items {
-    justify-content: space-between;
-    padding-left   : 20px;
-    padding-right  : 20px;
-    color: mediumaquamarine;
   }
 }
 
@@ -225,5 +215,55 @@ h1, h3, h4 {
   &:hover {
     color: $blackshadows;
     font-weight: 600;
+  }
+}
+
+
+.item-show-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+
+  .item-show {
+    display: flex;
+    justify-content: center;
+    .item-details {
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; 
+    }
+    div {
+      margin: 20px;
+    }
+  }
+
+  .related-item-container {
+    align-self: center;
+    h3 {
+      margin: 20px;
+      font-size: 1.3em;
+    }
+    .related {
+      display: flex;
+      justify-content: center;
+    }
+    .items {
+      display: flex;
+      flex-direction: column;
+      color: mediumaquamarine;
+      min-height: 150px;
+    }
+    a {
+      text-decoration: none;
+      align-content: center;
+      color: $middlepurple;
+      margin: 10px;
+      &:hover {
+        color: $seafoamgreen;
+      }
+    }
   }
 }
