@@ -102,16 +102,16 @@ h1, h3, h4 {
     h3 {
       font-family: $roboto;
     }
-    border         : 2px solid $blackshadows;
-    margin         : 20px;
-    padding        : 20px;
-    display        : flex;
-    flex-direction : column;
-    justify-content: space-between;
-    flex-wrap      : wrap;
-    align-items    : center;
-    min-height     : 225px;
-    width          : 20%;
+    border          : 2px solid $blackshadows;
+    margin          : 20px;
+    padding         : 20px;
+    display         : flex;
+    flex-direction  : column;
+    justify-content : space-between;
+    flex-wrap       : wrap;
+    align-items     : center;
+    min-height      : 225px;
+    width           : 20%;
   }
 }
 
