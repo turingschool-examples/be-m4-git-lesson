@@ -129,9 +129,9 @@ h1, h3, h4 {
     font-size: 30px;
   }
   a {
-    text-decoration: none;
-    margin: 10px;
-    color          : $middlepurple;
+    text-decoration : none;
+    margin          : 10px;
+    color           : $middlepurple;
     font-size: 1.5em;
     &:hover {
       color: $blackshadows;
