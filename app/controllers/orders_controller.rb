@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    order = Order.new(user: current_user)
+  order = Order.new(user: current_user)
     if order.save
       items = Item.find(params[:cart].keys.map { |key| key.to_i })
       items.each { |item| order.items << item }
