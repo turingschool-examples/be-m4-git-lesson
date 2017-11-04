@@ -1,5 +1,12 @@
 @import 'variables';
 
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size  : 14px;
+  background : $bubbles;
+}
+
+
 .landing {
   height: 95vh;
 }
@@ -17,15 +24,10 @@
   }
 }
 
-body {
-  font-family: 'Raleway', sans-serif;
-  font-size  : 14px;
-  background : $bubbles;
-}
-
 nav {
   background-color: $blackshadows;
-  padding         : 25px;
+  padding-bottom: 25px;
+
   .nav-username {
     display: flex;
     align-items: center;
@@ -35,14 +37,20 @@ nav {
   }
   .store-name {
     font-family    : $primer;
-    font-size      : 60px;
+    font-size      : 40px;
     text-align     : center;
     color          : $middlepurple;
     display        : flex;
     justify-content: center;
     align-items    : center;
+    flex-direction: column;
     img {
-      height: 100px;
+      height: 150px;
+      max-width: 100%;
+      &:hover {
+        transition: all 0.3s;
+        transform: scale(1.1);
+      }
     }
   }
   a {
@@ -55,8 +63,10 @@ nav {
   }
   .nav-links {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     font-size: 20px;
+    width: 50%;
+    margin-top: 40px;
   }
 }
 
@@ -64,16 +74,45 @@ h1 {
   font-size: 40px;
 }
 
+
 h1, h3, h4 {
   font-family: $primer;
 }
 
 .button_to {
   input {
-  border-radius   : 5px;
-  border-color    : $licorice;
-  border-width    : thin;
-  background-color: $seafoamgreen;
+    border: 2px solid $blackshadows;
+    border-radius   : 5px;
+    background-color: $seafoamgreen;
+    font-weight: 600;
+    &:hover {
+    background-color: $bubbles;
+    color: $licorice;
+    cursor: pointer;
+    }
+  }
+}
+
+.items-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+  .items {
+    h3 {
+      font-family: $roboto;
+    }
+    border: 2px solid $blackshadows;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 225px;
+
+    width: 20%;
   }
 }
 
@@ -83,6 +122,7 @@ h1, h3, h4 {
     justify-content: space-between;
     padding-left   : 20px;
     padding-right  : 20px;
+    color: mediumaquamarine;
   }
 }
 
@@ -170,5 +210,6 @@ h1, h3, h4 {
 .login-form {
   margin-top: 80px;
 }
+
 
 
