@@ -212,4 +212,18 @@ h1, h3, h4 {
 }
 
 
+.category-title {
+  text-align: center;
+  margin: 30px;
+}
 
+.category-item {
+  text-decoration: none;
+  font-size: 24px;
+  color: $licorice;
+  margin: 10px;
+  &:hover {
+    color: $blackshadows;
+    font-weight: 600;
+  }
+}
