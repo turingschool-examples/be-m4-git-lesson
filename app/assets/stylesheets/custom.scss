@@ -264,6 +264,14 @@ h1, h3, h4 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  a {
+    text-decoration: none;
+    color: $licorice;
+    &:hover {
+      color       : $blackshadows;
+      font-weight : 600;
+    }
+  }
   table {
     margin-top: 30px;
     width: 75%;
