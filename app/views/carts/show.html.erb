@@ -1,27 +1,95 @@
-<% @items.each do |item| %>
-<div class="item">
-  <%= image_tag item.image.url(:thumb) %>
-
-  <span class="title">Title: <%= item.title %>
-  Description: <%= item.description %></span>
-
-  <span>Price:<%= number_to_currency(item.price) %></span>
-
-  <div>
-    <%= button_to "+",cart_path(increment_me: item), method: :patch %>
-    <h3>Quantity: <%= @cart.count_of(item.id) %></h3>
-    <%= button_to "-",cart_path(decrement_me: item), method: :patch %>
-    <%= button_to "Remove", cart_path(item_id: item), method: :delete %>
-  </div>
-
-
-  <span>Subtotal: <%= @cart.item_subtotal(item.id) %></span>
+<div class='carts-container'>
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Controls</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td>
+          <%= image_tag item.image.url(:thumb) %>
+        </td>
+        <td>
+          <%= item.title %>
+        </td>
+        <td>
+          <%= number_to_currency(item.price) %>
+        </td>
+        <td>
+          <div class='controls'>
+            <%= button_to "-",cart_path(decrement_me: item), method: :patch %>
+            x<%= @cart.count_of(item.id) %>
+            <%= button_to "+",cart_path(increment_me: item), method: :patch %>
+            <%= button_to "Remove", cart_path(item_id: item), method: :delete %>
+          </div>
+        </td>
+        <td>
+          <p><%= number_to_currency(@cart.item_subtotal(item.id)) %></p>
+        </td>
+      </tr>
+     <% end %>
+    </tbody>
+  </table>
+  <h1>
+      Total Price: <%= number_to_currency(@cart.cart_total_price) %>
+  </h1>
   <% if current_user %>
-    <%= button_to "Checkout", new_order_path(current_user), method: :get %>
+    <%= button_to "Checkout", new_order_path(current_user), method: :get, class: 'checkout'%>
   <% else %>
-  <%= link_to "You must login to checkout", login_path %>
+    <%= link_to "You must login to checkout", login_path %>
   <% end %>
 </div>
-<% end %>
 
-<h1>Total Price: <%= number_to_currency(@cart.cart_total_price) %></h1>
+<!-- 
+
+  <% @items.each do |item| %>
+    <div class="cart-item">
+      <%= image_tag item.image.url(:thumb) %>
+      <%= item.title %>
+      <%= number_to_currency(item.price) %>
+      <div class='controls'>
+        <%= button_to "-",cart_path(decrement_me: item), method: :patch %>
+        x<%= @cart.count_of(item.id) %>
+        <%= button_to "+",cart_path(increment_me: item), method: :patch %>
+        <%= button_to "Remove", cart_path(item_id: item), method: :delete %>
+      </div>
+      Subtotal: <%= @cart.item_subtotal(item.id) %>
+    </div>
+    <% end %>
+    <h1>
+      Total Price: <%= number_to_currency(@cart.cart_total_price) %>
+    </h1>
+    <% if current_user %>
+      <%= button_to "Checkout", new_order_path(current_user), method: :get %>
+    <% else %>
+      <%= link_to "You must login to checkout", login_path %>
+    <% end %>
+</div>
+
+
+<table>
+    <tbody>
+      <tr>
+        <td>Pretty cactus</td>
+        <td>$20.95</td>
+        <td>+ 1 - Remove</td>
+        <td>20.95</td>
+      </tr>
+      <tr>
+        <td>Sue</td>
+        <td>00002</td>
+        <td>Red</td>
+      </tr>
+      <tr>
+        <td>Barb</td>
+        <td>00003</td>
+        <td>Green</td>
+      </tr>
+    </tbody>
+  </table> -->
