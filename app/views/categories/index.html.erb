@@ -1,3 +1,6 @@
-<% @categories.each do |category| %>
-  <%= link_to  category.title, "/#{category.slug}" %>
-<% end %>
+<div class='categories-container'>
+  <h1>All Categories</h1>
+  <% @categories.each do |category| %>
+    <%= link_to  category.title, "/#{category.slug}" %>
+  <% end %>
+</div>

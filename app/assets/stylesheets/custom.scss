@@ -107,6 +107,7 @@ h1, h3, h4 {
     padding        : 20px;
     display        : flex;
     flex-direction : column;
+    justify-content: space-between;
     flex-wrap      : wrap;
     align-items    : center;
     min-height     : 225px;
@@ -118,6 +119,24 @@ h1, h3, h4 {
   display: inline-block;
   p {
     margin: 20px;
+  }
+}
+
+.categories-container {
+  text-align: center;
+  h1 {
+    margin: 10px;
+    font-size: 30px;
+  }
+  a {
+    text-decoration: none;
+    margin: 10px;
+    color          : $middlepurple;
+    font-size: 1.5em;
+    &:hover {
+      color: $seafoamgreen;
+      font-weight: $semi;
+    }
   }
 }
 
