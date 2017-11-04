@@ -1,10 +1,19 @@
 <h2>Your Orders</h2>
 
-<% @orders.reverse.each do |order|%>
-  <div>
-    Order Number: <%=order.id%>
-    Order Date: <%=order.format_date%>
-    <br>
-    <%= button_to "View Order", order_path(order), method: "get" %>
-  <div>
+<table style="">
+  <thead>
+    <tr>
+      <th>Order Number</th>
+      <th>Order Date</th>
+      <th>View Order</th>
+    </tr>
+  </thead>
+  <% @orders.reverse.each do |order|%>
+  <tbody>
+    <tr>
+      <td><%=order.id%></td>
+      <td><%=order.format_date%></td>
+      <td><%= button_to "View Order", order_path(order), method: "get" %></td>
+    </tr>
+  <tbody>
 <%end%>

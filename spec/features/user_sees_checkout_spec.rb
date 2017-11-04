@@ -33,7 +33,7 @@ RSpec.feature "Visitor visits '/cart'" do
     click_on "Add to Cart"
     click_link "Cart"
     click_on "Checkout"
-
+    save_and_open_page
 
     expect(current_path).to eq orders_path
     expect(page).to have_content("Order was successfully placed")
