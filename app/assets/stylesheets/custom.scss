@@ -207,31 +207,31 @@ h1, h3, h4 {
 
 .category-item {
   text-decoration: none;
-  font-size: 24px;
-  color: $licorice;
-  margin: 10px;
+  font-size      : 24px;
+  color          : $licorice;
+  margin         : 10px;
   &:hover {
-    color: $blackshadows;
-    font-weight: 600;
+    color       : $blackshadows;
+    font-weight : 600;
   }
 }
 
 
 .item-show-container {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
+  display        : flex;
+  flex-direction : column;
+  align-content  : center;
   justify-content: center;
-  text-align: center;
+  text-align     : center;
 
   .item-show {
-    display: flex;
-    justify-content: center;
+    display         : flex;
+    justify-content : center;
     .item-details {
-      align-items: flex-start;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      align-items     : flex-start;
+      display         : flex;
+      flex-direction  : column;
+      justify-content : space-between;
     }
     div {
       margin: 20px;
