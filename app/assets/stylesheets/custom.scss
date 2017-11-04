@@ -259,3 +259,10 @@ h1, h3, h4 {
 
   .related-item-container { @include related-items; }
 }
+
+.user-profile {
+  text-align: center;
+  h1, h3 {
+    margin: 10px;
+  }
+}
