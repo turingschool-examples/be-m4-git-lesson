@@ -15,13 +15,6 @@ RSpec.feature "An admin logs in" do
     fill_in "session[password]", with: admin.password
     click_on "Submit"
 
-    # expect(current_path).to eq(admin_dashboard_path)
+    expect(current_path).to eq(admin_dashboard_path)
   end
 end
-
-# def login_as(user)
-#   visit login_path
-#   fill_in "Username", with: user.username
-#   fill_in "Password", with: user.password
-#   click_button "Login"
-# end
