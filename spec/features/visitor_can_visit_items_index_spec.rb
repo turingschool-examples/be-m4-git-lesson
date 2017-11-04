@@ -10,7 +10,6 @@ RSpec.describe "Visitor visits items index" do
 
     expect(current_path).to eq '/items'
     expect(page).to have_content(item.title)
-    expect(page).to have_content(item.description)
     expect(page).to have_css(".image")
   end
 end
