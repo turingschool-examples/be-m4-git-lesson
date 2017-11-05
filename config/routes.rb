@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resource :dashboard, only: :show, controller: :dashboard
     resources :users, only: [:show, :edit, :update]
+    get '/ordered', to: 'orders#index'
   end
 
   get    '/login',     to: 'sessions#new'

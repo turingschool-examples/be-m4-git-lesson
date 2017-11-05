@@ -382,12 +382,16 @@ table.orders td {
 }
 
 .admin-dashboard {
-  margin-top: 20px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  h1 {
+    margin: 25px;
+  }
   @extend .carts-container;
+  table { margin: 0;}
   .alter-status {
     font-size: inherit;
   }
