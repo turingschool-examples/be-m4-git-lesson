@@ -44,9 +44,9 @@
     <thead>
       <h1>Orders By Status</h1>
     </thead>
-    <tr><%= link_to  "Ordered",   admin_ordered_path(status: 0)   %></tr>
-    <tr><%= link_to  "Paid",      admin_paid_path(status: 1)      %></tr>
-    <tr><%= link_to  "Cancelled", admin_cancelled_path(status: 2) %></tr>
-    <tr><%= link_to  "Completed", admin_completed_path(status: 3) %></tr>
+    <tr><%= link_to "Ordered (#{Order.total_ordered})",     admin_ordered_path(status: 0)   %></tr>
+    <tr><%= link_to "Paid (#{Order.total_paid})",           admin_paid_path(status: 1)      %></tr>
+    <tr><%= link_to "Cancelled (#{Order.total_cancelled})", admin_cancelled_path(status: 2) %></tr>
+    <tr><%= link_to "Completed (#{Order.total_completed})", admin_completed_path(status: 3) %></tr>
   </table>
 </div>
