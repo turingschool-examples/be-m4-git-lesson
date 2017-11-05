@@ -7,7 +7,7 @@ RSpec.feature 'Visitor can adjust cart total' do
   scenario 'visitor sees cart total' do
     visit cart_path
 
-    expect(page).to have_content("Total Price: $0")
+    expect(page).to have_content("Your cart is empty.")
   end
 
   scenario 'visitor adds item, total changes' do

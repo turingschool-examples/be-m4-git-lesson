@@ -13,14 +13,17 @@
         <%= link_to image_tag("logo.png", :alt => "logo"), root_path, class: 'root-image' %>
         <%= link_to  "The Conservatory", items_path %>
         <div class='nav-links'>
-          <% if current_user %>
-          <h2>Welcome, <%= link_to  current_user.first_name, dashboard_path%></h2>
-          <%= link_to "Log Out", logout_path, method: :delete %>
+          <% if current_admin? %>
+            <h2>Welcome, <%= link_to  current_user.first_name, admin_dashboard_path%></h2>
+            <%= link_to "Log Out", logout_path, method: :delete %>
+          <% elsif current_user %>
+            <h2>Welcome, <%= link_to  current_user.first_name, dashboard_path%></h2>
+            <%= link_to "Log Out", logout_path, method: :delete %>
           <% else %>
-          <%= link_to "Log In", login_path %>
+            <%= link_to "Log In", login_path %>
           <% end %>
-          <%= link_to  "Categories", categories_path %>
-          <%= link_to "Cart (#{@cart.total})", cart_path %>
+            <%= link_to  "Categories", categories_path %>
+            <%= link_to "Cart (#{@cart.total})", cart_path %>
         </div>
       </div>
         <% flash.each do |type, message| %>
