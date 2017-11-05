@@ -5,6 +5,10 @@ class OrdersController < ApplicationController
     @orders = current_user.orders.reverse_order
   end
 
+  def show
+    @order = Order.find(params[:id])
+  end
+
   def create
     order = Order.new(user: current_user)
     if order.save

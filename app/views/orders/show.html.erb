@@ -1,0 +1,15 @@
+<%= @order.id %>
+<%= @order.status %>
+<% if @order.status == 3 || @order.status == 4 %>
+  <%= @order.format_date(@order.updated_at)%>
+<% end %>
+<%= @order.format_date(@order.created_at) %>
+
+<% @order.items.uniq.each do |item| %>
+  <%= link_to "#{item.title}", item_path(item) %>
+  Quantity: <%= item.order_items.item_quantity(item.id) %>
+  Subtotal: <%= number_to_currency(item.order_items.item_subtotal(item.id)) %>
+<% end %>
+
+
+Total: <%= number_to_currency(@order.order_items.total(@order.id)) %>
