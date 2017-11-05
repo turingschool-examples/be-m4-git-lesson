@@ -15,6 +15,7 @@
         <div class='nav-links'>
           <% if current_admin? %>
             <h2>Welcome, <%= link_to  current_user.first_name, admin_dashboard_path%></h2>
+            <h2><%= link_to "Account", admin_user_path(current_user) %></h2>
           <% elsif current_user %>
             <h2>Welcome, <%= link_to  current_user.first_name, dashboard_path%></h2>
           <% else %>

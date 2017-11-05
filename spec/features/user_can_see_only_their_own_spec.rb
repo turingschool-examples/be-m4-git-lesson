@@ -5,7 +5,7 @@ RSpec.describe 'Users can only see their own data' do
   let!(:other_user) { create(:user) }
   let!(:admin)      { create(:user, role: 1) }
 
-  it 'user can not view another users private data' do
+  it 'user can only see their own data' do
     visit login_path
 
     expect(current_path).to eq("/login")

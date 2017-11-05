@@ -12,12 +12,12 @@ RSpec.feature "As a non admin" do
 
   context "as an authenticated user" do
     it 'I visit admin/dashboard and receive status 404' do
-    user = User.create(first_name: 'Django',
-                        last_name: 'Unchained',
-                        email: 'cool',
-                        address: 'wherever',
-                        password: 'django',
-                        role: 0)
+      user = User.create(first_name: 'Django',
+                          last_name: 'Unchained',
+                          email: 'cool',
+                          address: 'wherever',
+                          password: 'django',
+                          role: 0)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
       visit admin_dashboard_path
