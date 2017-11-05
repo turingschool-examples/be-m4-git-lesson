@@ -387,6 +387,10 @@ table.orders td {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @extend .carts-container;
+  .alter-status {
+    font-size: inherit;
+  }
   span {
     color: $blackshadows;
   }

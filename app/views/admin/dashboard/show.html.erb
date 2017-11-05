@@ -1,4 +1,4 @@
-<div class='admin-dashboard carts-container'>
+<div class='admin-dashboard'>
   <h1><span><%= current_user.first_name %>  <%= current_user.last_name %>'s</span> Dashboard</h1>
   <%= link_to  "User Profile", admin_user_path(current_user) %>
   <%= link_to  "View Past Orders", orders_path %>
@@ -8,7 +8,7 @@
 
   <table class=''>
     <thead>
-      <h1><span>All Orders</span></h1>
+      <h1>All Orders</h1>
     </thead>
     <tr>
       <th>Order ID</th>
@@ -26,14 +26,14 @@
       <td><%= number_to_currency(order.order_items.total(order)) %></td>
       <td>
         <% if order.ordered? %>
-          <%= link_to  "paid", order_path(order, status: :paid), method: :patch  %>
+          <%= link_to  "paid", order_path(order, status: :paid), method: :patch, class: 'alter-status'%>
         <% elsif order.paid? %>
-          <%= link_to  "completed", order_path(order, status: :completed), method: :patch %>
+          <%= link_to  "completed", order_path(order, status: :completed), method: :patch, class: 'alter-status' %>
         <% end %>
       </td>
       <td>
         <% if cancellable?(order) %>
-          <%= link_to "cancel", order_path(order, :status => "cancelled"), method: :patch %>
+          <%= link_to "cancel", order_path(order, :status => "cancelled"), method: :patch, class: 'alter-status' %>
         <% end %>
       </td>
       <% end %>
