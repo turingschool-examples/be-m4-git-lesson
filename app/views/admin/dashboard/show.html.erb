@@ -44,8 +44,9 @@
     <thead>
       <h1>Orders By Status</h1>
     </thead>
-    <tr><%= link_to  "Ordered", admin_ordered_path %></tr>
-    <tr></tr>
-    <tr></tr>
+    <tr><%= link_to  "Ordered",   admin_ordered_path(status: 0)   %></tr>
+    <tr><%= link_to  "Paid",      admin_paid_path(status: 1)      %></tr>
+    <tr><%= link_to  "Cancelled", admin_cancelled_path(status: 2) %></tr>
+    <tr><%= link_to  "Completed", admin_completed_path(status: 3) %></tr>
   </table>
 </div>

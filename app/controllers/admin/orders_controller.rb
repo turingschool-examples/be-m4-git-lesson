@@ -1,6 +1,18 @@
 class Admin::OrdersController < Admin::BaseController
   before_action :require_admin
 
+  def index
+    @orders = delegate_orders
+    p params
+  end
+
+  def delegate_orders
+    return Order.ordered   if params["status"] == "0"
+    return Order.paid      if params["status"] == "1"
+    return Order.cancelled if params["status"] == "2"
+    return Order.completed if params["status"] == "3"
+  end
+
   def cancelled_orders
 
   end
@@ -16,11 +28,6 @@ class Admin::OrdersController < Admin::BaseController
   def cancelled_orders
 
   end
-end
 
-# def index
-#   @orders = Order.ordered if params["status"] == "0"
-#   @orders = Order.paid if params["status"] == "1"
-#   @orders = Order.cancelled if params["status"] == "2"
-#   @orders = Order.completed if params["status"] == "3"
-# end
+
+end
