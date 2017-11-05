@@ -10,5 +10,4 @@ class Order < ApplicationRecord
   def format_date(date)
     date.strftime(format='%m/%d/%Y')
   end
-
 end

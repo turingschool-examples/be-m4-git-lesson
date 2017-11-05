@@ -380,3 +380,25 @@ table.orders td {
     }
   }
 }
+
+.admin-dashboard {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  span {
+    color: $blackshadows;
+  }
+  a {
+    color           : $licorice;
+    text-decoration : none;
+    font-size: 1.5em;
+    margin: 10px;
+
+    &:hover {
+      font-weight : 600;
+      color       : $blackshadows;
+    }
+  }
+}

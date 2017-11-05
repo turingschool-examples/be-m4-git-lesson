@@ -1,1 +1,28 @@
-<h1>ADMIN DASHBOARD</h1>
+<div class='admin-dashboard carts-container'>
+  <h1><span><%= current_user.first_name %>  <%= current_user.last_name %>'s</span> Dashboard</h1>
+  <%= link_to  "User Profile", admin_user_path(current_user) %>
+  <%= link_to  "View Past Orders", orders_path %>
+  <%= link_to  "Edit Account", edit_admin_user_path(current_user) %>
+  <%# link_to  "View All Items", admin_items_path %>
+  <%# link_to "Create New Item", new_admin_item_path %>
+
+  <table class=''>
+    <thead><h1><span>All Orders</span></h1></thead>
+    <tr>
+      <th>Order ID</th>
+      <th>Full Name</th>
+      <th>Status</th>
+      <th>Total Price</th>
+      <th>Change Status</th>
+      <th>Cancel Order</th>
+    </tr>
+    <tbody>
+      <tr><%=  @orders.each do |order| %></tr>
+      <td><%= link_to order.id, order_path(order) %></td>
+      <td><%= order.user.first_name %> <%= order.user.last_name %></td>
+      <td><%= order.status %></td>
+      <td><%= number_to_currency(order.order_items.total(order)) %></td>
+      <% end %>
+    </tbody>
+  </table>
+</div>
