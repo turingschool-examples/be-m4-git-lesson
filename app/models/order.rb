@@ -5,7 +5,7 @@ class Order < ApplicationRecord
 
   validates :status, presence: true
 
-  enum status: [ "ordered", "paid", "cancelled", "completed" ]
+  enum status: %w(ordered paid cancelled completed)
 
   def format_date(date)
     date.strftime(format='%m/%d/%Y')
