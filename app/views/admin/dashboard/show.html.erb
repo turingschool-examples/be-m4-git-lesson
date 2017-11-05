@@ -7,7 +7,9 @@
   <%# link_to "Create New Item", new_admin_item_path %>
 
   <table class=''>
-    <thead><h1><span>All Orders</span></h1></thead>
+    <thead>
+      <h1><span>All Orders</span></h1>
+    </thead>
     <tr>
       <th>Order ID</th>
       <th>Full Name</th>
@@ -17,17 +19,22 @@
       <th>Cancel Order</th>
     </tr>
     <tbody>
-      <tr><%=  @orders.each do |order| %></tr>
+      <tr><% @orders.each do |order| %></tr>
       <td><%= link_to order.id, order_path(order) %></td>
       <td><%= order.user.first_name %> <%= order.user.last_name %></td>
       <td><%= order.status %></td>
       <td><%= number_to_currency(order.order_items.total(order)) %></td>
-      <td><% if order.ordered? %>
-        <%= link_to  "paid", order_path(order, status: :paid), method: :patch  %>
-        <td><% elsif order.paid? %>
-        <%= link_to  "completed", order_path(order, status: :completed), method: :patch %>
-        </td>
-      <% end %>
+      <td>
+        <% if order.ordered? %>
+          <%= link_to  "paid", order_path(order, status: :paid), method: :patch  %>
+        <% elsif order.paid? %>
+          <%= link_to  "completed", order_path(order, status: :completed), method: :patch %>
+        <% end %>
+      </td>
+      <td>
+        <% if cancellable?(order) %>
+          <%= link_to "cancel", order_path(order, :status => "cancelled"), method: :patch %>
+        <% end %>
       </td>
       <% end %>
     </tbody>
