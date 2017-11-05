@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resource :dashboard, only: :show, controller: :dashboard
+    resources :users, only: [:show, :edit, :update]
   end
 
   get    '/login',     to: 'sessions#new'
