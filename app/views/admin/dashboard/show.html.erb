@@ -26,14 +26,14 @@
       <td><%= number_to_currency(order.order_items.total(order)) %></td>
       <td>
         <% if order.ordered? %>
-        <%= link_to  "paid", order_path(order, status: :paid), method: :patch, class: 'alter-status' %>
+          <%= link_to  "paid", order_path(order, status: :paid), method: :patch, class: 'alter-status' %>
         <% elsif order.paid? %>
-        <%= link_to  "completed", order_path(order, status: :completed), method: :patch, class: 'alter-status' %>
+          <%= link_to  "completed", order_path(order, status: :completed), method: :patch, class: 'alter-status' %>
         <% end %>
       </td>
       <td>
         <% if cancellable?(order) %>
-        <%= link_to "cancel", order_path(order, :status => "cancelled"), method: :patch, class: 'alter-status' %>
+          <%= link_to "cancel", order_path(order, :status => "cancelled"), method: :patch, class: 'alter-status' %>
         <% end %>
       </td>
       <% end %>
