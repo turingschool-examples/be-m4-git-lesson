@@ -53,7 +53,6 @@ RSpec.describe 'Admin can visit profile page' do
     fill_in "user[last_name]",  with: "Swan"
     fill_in "user[address]",    with: "1234 Enchanted Ave. Storybrooke, MA 49295"
 
-    save_and_open_page
     click_on "Update"
 
     expect(current_path).to eq("/admin/users/#{admin.id}")
