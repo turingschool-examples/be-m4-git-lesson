@@ -14,7 +14,6 @@ body {
 .alert-success {
   color      : green;
   text-align : center;
-
   a {
     font-weight     : 700;
     color           : green;
@@ -28,11 +27,9 @@ body {
 nav {
   padding-bottom   : 25px;
   background-color : $blackshadows;
-
   .nav-username {
     display     : flex;
     align-items : center;
-
     a {
       font-size : 14px;
     }
@@ -40,12 +37,10 @@ nav {
 
   .store-name {
     display         : flex;
-
     font-family     : $primer;
     font-size       : 40px;
     color           : $middlepurple;
     text-align      : center;
-
     justify-content : center;
     align-items     : center;
     flex-direction  : column;
@@ -53,7 +48,6 @@ nav {
     img {
       height    : 150px;
       max-width : 100%;
-
       &:hover {
         transition : all 0.3s;
         transform  : scale(1.1);
@@ -64,9 +58,7 @@ nav {
   a {
     color           : $middlepurple;
     text-decoration : none;
-
     align-content   : center;
-
     &:hover {
       color : $seafoamgreen;
     }
@@ -74,12 +66,9 @@ nav {
 
   .nav-links {
     display         : flex;
-
     width           : 50%;
     margin-top      : 40px;
-
     font-size       : 20px;
-
     justify-content : space-around;
   }
 }
@@ -98,7 +87,6 @@ h1, h3, h4 {
     font-weight      : 600;
     border           : 2px solid $blackshadows;
     border-radius    : 5px;
-
     &:hover {
       cursor           : pointer;
       background-color : $bubbles;
@@ -109,22 +97,16 @@ h1, h3, h4 {
 
 .items-container {
   display         : flex;
-
   padding         : 10px;
-
   flex-wrap       : wrap;
   justify-content : center;
-
   .items {
     display         : flex;
-
     min-height      : 225px;
     width           : 20%;
     margin          : 20px;
     padding         : 20px;
-
     border          : 2px solid $blackshadows;
-
     flex-direction  : column;
     justify-content : space-between;
     flex-wrap       : wrap;
@@ -138,14 +120,12 @@ h1, h3, h4 {
 
 .categories-container {
   text-align : center;
-
   h1 {
     margin    : 10px;
     font-size : 30px;
   }
   a {
     margin          : 10px;
-
     font-size       : 1.5em;
     color           : $middlepurple;
     text-decoration : none;
@@ -159,11 +139,9 @@ h1, h3, h4 {
 
 .login-page {
   display         : flex;
-
   height          : 80vh;
   width           : 800px;
   margin          : auto;
-
   align-items     : center;
   justify-content : center;
 
@@ -171,14 +149,11 @@ h1, h3, h4 {
     position       : relative;
     display        : flex;
     z-index        : 1;
-
     min-height     : 500px;
     width          : 100%;
     padding        : 45px;
-
     background     : $middlepurple;
     text-align     : center;
-
     align-items    : center;
     flex-direction : column;
 
@@ -188,18 +163,15 @@ h1, h3, h4 {
 
     input {
       box-sizing    : border-box;
-
       width         : 100%;
       margin        : 0 0 20px;
       padding       : 20px;
-
       background    : #f2f2f2;
       font-size     : 14px;
       text-align    : center;
       border        : 0;
       border-radius : 5px;
       outline       : 0;
-
       &:focus {
         color  : $xanadu;
         border : 5px solid $xanadu;
@@ -214,9 +186,7 @@ h1, h3, h4 {
       color           : $seafoamgreen;
       text-decoration : none;
       text-transform  : uppercase;
-
       align-content   : center;
-
       &:hover {
         font-weight : $bold;
         color       : $xanadu;
@@ -227,7 +197,6 @@ h1, h3, h4 {
       width          : 100%;
       margin-top     : 4px;
       padding        : 20px;
-
       cursor         : pointer;
       background     : $bubbles;
       font-size      : 14px;
@@ -254,11 +223,9 @@ h1, h3, h4 {
 
 .category-item {
   margin          : 10px;
-
   font-size       : 24px;
   color           : $licorice;
   text-decoration : none;
-
   &:hover {
     font-weight : 600;
     color       : $blackshadows;
@@ -267,20 +234,15 @@ h1, h3, h4 {
 
 .item-show-container {
   display         : flex;
-
   text-align      : center;
-
   flex-direction  : column;
   align-content   : center;
   justify-content : center;
-
   .item-show {
     display         : flex;
     justify-content : center;
-
     .item-details {
       display         : flex;
-
       align-items     : flex-start;
       flex-direction  : column;
       justify-content : space-between;
@@ -302,16 +264,15 @@ h1, h3, h4 {
 }
 
 table.orders {
-  width: 100%;
+  width : 100%;
 }
 
 table.orders td {
-  text-align: center;
+  text-align : center;
 }
 
 .carts-container {
   display        : flex;
-
   flex-direction : column;
   align-items    : center;
 
@@ -328,7 +289,6 @@ table.orders td {
   table {
     width      : 75%;
     margin-top : 30px;
-
     th {
       font-size   : 1.2em;
       font-weight : $semi;
@@ -340,10 +300,8 @@ table.orders td {
 
   .controls {
     display         : flex;
-
     align-items     : center;
     justify-content : center;
-
     * {
       margin : 4px;
     }
@@ -351,9 +309,7 @@ table.orders td {
 
   .cart-item {
     display         : flex;
-
     width           : 50%;
-
     justify-content : flex-start;
     align-items     : center;
 
@@ -371,12 +327,43 @@ table.orders td {
     height           : 50px;
     width            : 200px;
     margin           : 10px;
-
     background-color : $bubbles;
     font-size        : 1.5em;
-
     &:hover {
       border : 5px solid $seafoamgreen;
+    }
+  }
+}
+
+.admin-dashboard {
+  @extend .carts-container;
+  display         : flex;
+  flex-direction  : column;
+  justify-content : center;
+  align-items     : center;
+  h1 {
+    margin : 25px;
+  }
+
+  table { margin: 0;}
+
+  .alter-status {
+    font-size : inherit;
+  }
+
+  span {
+    color : $blackshadows;
+  }
+
+  a {
+    margin          : 10px;
+    font-size       : 1.5em;
+    color           : $licorice;
+    text-decoration : none;
+
+    &:hover {
+      font-weight : 600;
+      color       : $blackshadows;
     }
   }
 }

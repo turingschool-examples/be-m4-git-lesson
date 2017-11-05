@@ -1,1 +1,52 @@
-<h1>ADMIN DASHBOARD</h1>
+<div class='admin-dashboard'>
+  <h1><span><%= current_user.first_name %>  <%= current_user.last_name %>'s</span> Dashboard</h1>
+  <%= link_to  "User Profile",     admin_user_path(current_user) %>
+  <%= link_to  "View Past Orders", orders_path %>
+  <%= link_to  "Edit Account",     edit_admin_user_path(current_user) %>
+  <%# link_to  "View All Items",   admin_items_path %>
+  <%# link_to  "Create New Item",  new_admin_item_path %>
+
+  <table>
+    <thead>
+      <h1>All Orders</h1>
+    </thead>
+    <tr>
+      <th>Order ID</th>
+      <th>Full Name</th>
+      <th>Status</th>
+      <th>Total Price</th>
+      <th>Mark As</th>
+      <th>Cancel Order</th>
+    </tr>
+    <tbody>
+      <tr><% @orders.each do |order| %></tr>
+      <td><%= link_to order.id, order_path(order) %></td>
+      <td><%= order.user.first_name %> <%= order.user.last_name %></td>
+      <td><%= order.status %></td>
+      <td><%= number_to_currency(order.order_items.total(order)) %></td>
+      <td>
+        <% if order.ordered? %>
+          <%= link_to  "paid", order_path(order, status: :paid), method: :patch, class: 'alter-status' %>
+        <% elsif order.paid? %>
+          <%= link_to  "completed", order_path(order, status: :completed), method: :patch, class: 'alter-status' %>
+        <% end %>
+      </td>
+      <td>
+        <% if cancel?(order) %>
+          <%= link_to "cancel", order_path(order, :status => "cancelled"), method: :patch, class: 'alter-status' %>
+        <% end %>
+      </td>
+      <% end %>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+      <h1>Orders By Status</h1>
+    </thead>
+    <tr><%= link_to "Ordered (#{Order.total_ordered})",     admin_ordered_path(status: 0)   %></tr>
+    <tr><%= link_to "Paid (#{Order.total_paid})",           admin_paid_path(status: 1)      %></tr>
+    <tr><%= link_to "Cancelled (#{Order.total_cancelled})", admin_cancelled_path(status: 2) %></tr>
+    <tr><%= link_to "Completed (#{Order.total_completed})", admin_completed_path(status: 3) %></tr>
+  </table>
+</div>

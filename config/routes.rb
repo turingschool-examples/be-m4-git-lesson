@@ -2,8 +2,13 @@ Rails.application.routes.draw do
   root to:  'landing#index'
 
   namespace :admin do
-    resource :dashboard, only: :show, controller: :dashboard
-    resources :users, only: [:show, :edit, :update]
+    resource  :dashboard, only: :show, controller: :dashboard
+    resources :users,     only: [:show, :edit, :update]
+
+    get '/ordered',   to: 'orders#index'
+    get '/paid',      to: 'orders#index'
+    get '/cancelled', to: 'orders#index'
+    get '/completed', to: 'orders#index'
   end
 
   get    '/login',     to: 'sessions#new'
@@ -14,7 +19,7 @@ Rails.application.routes.draw do
   resource  :cart
   resources :items,  only: [:index, :show]
   resources :users,  only: [:new, :create]
-  resources :orders, only: [:index, :show, :create]
+  resources :orders, only: [:index, :show, :create, :update]
 
 
   get '/categories', to: 'categories#index'

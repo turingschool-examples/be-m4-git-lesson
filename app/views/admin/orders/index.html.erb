@@ -1,0 +1,17 @@
+<div class='admin-dashboard'>
+  <table>
+    <% if !@orders.empty? %>
+      <h1><span>Status: </span><%= @orders.first.status %></h1>
+      <% @orders.each do |order| %>
+        <tr>
+          <td>
+            Order id: <%= link_to order.id, order_path(order) %>
+          </td>
+        </tr>
+      <% end %>
+    <% else %>
+      <h1>There are no orders with this status.</h1>
+    <% end %>
+  </table>
+  <%= link_to "Back to Dashboard", admin_dashboard_path %>
+</div>

@@ -4,6 +4,7 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require "rspec/rails"
 require "paperclip/matchers"
+require 'helpers/helper_methods'
 
 ActiveRecord::Migration.maintain_test_schema!
 DatabaseCleaner.strategy = :truncation
