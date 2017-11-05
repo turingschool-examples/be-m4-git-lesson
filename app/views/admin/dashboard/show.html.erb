@@ -32,7 +32,7 @@
         <% end %>
       </td>
       <td>
-        <% if cancellable?(order) %>
+        <% if cancel?(order) %>
           <%= link_to "cancel", order_path(order, :status => "cancelled"), method: :patch, class: 'alter-status' %>
         <% end %>
       </td>
