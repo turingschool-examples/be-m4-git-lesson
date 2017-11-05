@@ -13,6 +13,7 @@ RSpec.describe 'user can visit order show page' do
     user = create(:user)
     order = user.orders.create(status: 0)
     order_item =  OrderItem.create(order: order, item: item)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
     visit order_path(order)
 
@@ -43,6 +44,7 @@ RSpec.describe 'user can visit order show page' do
     order_item =  OrderItem.create(order: order, item: item1)
     order_item =  OrderItem.create(order: order, item: item2)
     order_item =  OrderItem.create(order: order, item: item2)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
     visit order_path(order)
 
