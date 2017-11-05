@@ -11,6 +11,8 @@ RSpec.describe "User sees an index of orders" do
     order = Order.create(status: 0, user: user)
     order2 = Order.create(status: 0, user: user)
 
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
     visit orders_path
 
     expect(page).to have_content(order.id)
