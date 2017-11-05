@@ -26,7 +26,7 @@
       <td><%= number_to_currency(order.order_items.total(order)) %></td>
       <td>
         <% if order.ordered? %>
-        <%= link_to  "paid", order_path(order, status: :paid), method: :patch, class: 'alter-status'%>
+        <%= link_to  "paid", order_path(order, status: :paid), method: :patch, class: 'alter-status' %>
         <% elsif order.paid? %>
         <%= link_to  "completed", order_path(order, status: :completed), method: :patch, class: 'alter-status' %>
         <% end %>

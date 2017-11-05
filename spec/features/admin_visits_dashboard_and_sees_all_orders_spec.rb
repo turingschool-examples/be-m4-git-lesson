@@ -4,12 +4,16 @@ RSpec.feature "Admin visits dashboard" do
   let!(:admin) { create(:user, role: 1) }
 
   scenario "admin sees listing for all orders" do
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+    # allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+    login_as(admin)
 
     visit admin_dashboard_path
 
+    expect(page).to have_content("User Profile")
+    expect(page).to have_content("View Past Orders")
+    expect(page).to have_content("Edit Account")
+    expect(page).to have_content("All Orders")
     
-
 
     # sees listing of all orders 
     # sees total number of orders for each status
