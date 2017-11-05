@@ -43,7 +43,7 @@
         Total Price: <%= number_to_currency(@cart.cart_total_price) %>
     </h1>
     <% if current_user %>
-      <%= button_to "Checkout", orders_path(current_user), method: :post, class: 'checkout'%>
+      <%= button_to "Checkout", orders_path(current_user, cart: @cart.contents), method: :post, class: 'checkout'%>
     <% else %>
       <%= link_to "You must login to checkout", login_path %>
     <% end %>
