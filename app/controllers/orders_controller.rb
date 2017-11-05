@@ -22,6 +22,18 @@ class OrdersController < ApplicationController
     end
   end
 
+  def update
+    @order = Order.find(params[:id])
+    if @order.ordered?
+      status = params[:status]
+      @order.update(status: status)
+      if @order.save
+        flash[:success] = "Order no #{@order.id} marked as #{status}"
+        redirect_to admin_dashboard_path
+      end
+    end
+  end
+
   private
   def check_user
     redirect_to login_path if !current_user

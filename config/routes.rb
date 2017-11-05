@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resource  :cart
   resources :items,  only: [:index, :show]
   resources :users,  only: [:new, :create]
-  resources :orders, only: [:index, :show, :create]
+  resources :orders, only: [:index, :show, :create, :update]
 
 
   get '/categories', to: 'categories#index'
