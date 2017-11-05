@@ -12,7 +12,7 @@
    <tbody>
      <tr>
        <td><%= order.id %></td>
-       <td><%= order.format_date %></td>
+       <td><%= order.format_date(order.created_at) %></td>
        <td><%= button_to "View Order", order_path(order), method: "get" %></td>
      </tr>
    <tbody>

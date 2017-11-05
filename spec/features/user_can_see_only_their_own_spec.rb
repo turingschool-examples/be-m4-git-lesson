@@ -36,7 +36,7 @@ RSpec.describe 'Users can only see their own data' do
 
     expect(current_path).to eq('/orders')
     expect(page).to have_content("#{order.id}")
-    expect(page).to have_content("#{order.format_date}")
+    expect(page).to have_content("#{order.format_date(order.created_at)}")
     expect(page).to have_button("View Order")
   end
 
