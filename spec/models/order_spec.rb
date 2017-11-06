@@ -58,5 +58,17 @@ RSpec.describe Order do
       expect(comparison[2].length).to eq(4)
       expect(comparison[2].to_i).to be_kind_of(Integer)
     end
+
+    it "#create_order_items" do
+      user  = create(:user)
+      order = create(:order, user: user)
+      category = create(:category)
+      item = create(:item, category: category)
+      item = create(:item, category: category)
+      cart = {"1" => 2}
+      order.create_order_items(cart)
+
+      expect(order.items.count).to eq(2)
+    end
   end
 end

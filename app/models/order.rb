@@ -11,6 +11,17 @@ class Order < ApplicationRecord
     date.strftime('%m/%d/%Y')
   end
 
+  def create_order_items(cart)
+    items = Item.find(cart.keys.map { |key| key.to_i })
+    items.each do |item|
+      quantity = cart[item.id.to_s].to_i
+      until quantity == 0
+        self.items << item
+        quantity -= 1
+      end
+    end
+  end
+
   def self.total_ordered
     where(status: 0).count
   end

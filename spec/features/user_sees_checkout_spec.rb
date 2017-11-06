@@ -29,5 +29,6 @@ RSpec.feature "Visitor visits '/cart'" do
     expect(current_path).to eq orders_path
     expect(page).to have_content("Order was successfully placed")
     expect(page).to have_content(Order.last.id)
+    expect(page).to have_content("Cart (0)")
   end
 end

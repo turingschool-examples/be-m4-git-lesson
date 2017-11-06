@@ -1,16 +1,37 @@
-<h2> Order: <%= @order.id %>
-  Status: <%= @order.status %>
+<div class="single-order">
+  <p>Order No: <%= @order.id %></p>
+  <p>Status: <%= @order.status %></p>
   <% if @order.status == 3 || @order.status == 4 %>
-    <%= @order.format_date(@order.updated_at)%>
+    <p>Updated On: <%= @order.format_date(@order.updated_at)%></p>
   <% end %>
-  Placed On: <%= @order.format_date(@order.created_at) %>
-</h2>
+  <p>Placed On: <%= @order.format_date(@order.created_at) %></p>
+  <% if current_admin? %>
+    <p>Order By: <%= @order.user.first_name %> <%= @order.user.last_name %></p>
+    <p>Address: <%= @order.user.address %></p>
+  <% end %>
+</div>
 
-<% @order.items.uniq.each do |item| %>
-  <%= link_to "#{item.title}", item_path(item) %>
-  Quantity: <%= item.order_items.item_quantity(item.id) %>
-  Subtotal: <%= number_to_currency(item.order_items.item_subtotal(item.id)) %>
-<% end %>
-
-
-Total: <%= number_to_currency(@order.order_items.total(@order.id)) %>
+<table class="single-order-items">
+  <thead>
+    <tr>
+      <th>Item Name</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Subtotal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @order.items.uniq.each do |item| %>
+    <tr>
+      <td><%= link_to "#{item.title}", item_path(item) %></td>
+      <td><%= item.order_items.item_quantity(@order.id, item.id) %></td>
+      <td><%= item.order_items.find_by(item_id: item.id).price %></td>
+      <td><%= number_to_currency(item.order_items.item_subtotal(@order.id, item.id)) %></td>
+    </tr>
+    <% end %>
+    <tr class=last-row>
+      <td class="last-row-title" colspan="3">Total:</td>
+      <td><%= number_to_currency(@order.order_items.total(@order.id)) %></td>
+    </tr>
+  </tbody>
+</table>
