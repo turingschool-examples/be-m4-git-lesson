@@ -25,7 +25,7 @@ RSpec.describe 'Admin can create new item' do
   it 'by clicking on create new item link and submitting form' do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
-    visit admin_dashboard_path
+    visit
 
     expect(page).to have_content("Welcome, #{admin.first_name}")
     expect(page).to have_link("Create New Item")
@@ -38,7 +38,11 @@ RSpec.describe 'Admin can create new item' do
     expect(page).to have_field("Price")
     expect(page).to have_field("Status")
     expect(page).to have_field("Category")
+    expect(page).to have_button("Create Item")
+  end
 
+  it 'by filling out all the required fields' do
+    
 
   end
 end
