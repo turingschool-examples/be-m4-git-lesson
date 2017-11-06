@@ -1,9 +1,10 @@
-<%= @order.id %>
-<%= @order.status %>
-<% if @order.status == 3 || @order.status == 4 %>
-  <%= @order.format_date(@order.updated_at)%>
-<% end %>
-<%= @order.format_date(@order.created_at) %>
+<h2> Order: <%= @order.id %>
+  Status: <%= @order.status %>
+  <% if @order.status == 3 || @order.status == 4 %>
+    <%= @order.format_date(@order.updated_at)%>
+  <% end %>
+  Placed On: <%= @order.format_date(@order.created_at) %>
+</h2>
 
 <% @order.items.uniq.each do |item| %>
   <%= link_to "#{item.title}", item_path(item) %>
