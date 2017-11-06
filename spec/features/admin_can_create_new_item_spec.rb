@@ -14,7 +14,7 @@ RSpec.describe 'Admin can create new item' do
     fill_in "session[password]", with: admin.password
     click_on "Submit"
 
-    # save_and_open_page
+
     expect(page).to have_content("Welcome, #{admin.first_name}")
     expect(page).to have_content("All Orders")
     expect(page).to have_link("Ordered")
@@ -25,7 +25,7 @@ RSpec.describe 'Admin can create new item' do
   it 'by clicking on create new item link and submitting form' do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
-    visit
+    visit admin_dashboard_path
 
     expect(page).to have_content("Welcome, #{admin.first_name}")
     expect(page).to have_link("Create New Item")
@@ -42,7 +42,22 @@ RSpec.describe 'Admin can create new item' do
   end
 
   it 'by filling out all the required fields' do
-    
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
+    visit admin_dashboard_path
+    click_on "Create New Item"
+
+    expect(current_path).to eq(new_admin_item_path)
+save_and_open_page
+    fill_in "item[title]",       with: "Night Shade"
+    fill_in "item[description]", with: "It's poisonous!"
+    fill_in "item[price]",       with: "19.95"
+    select "Active",             from: "item[status]"
+    select "Pretty But Deadly",    from: "item[category]"
+    fill_in "item[image]",       with: "images/1.jpg"
+
+    click_on "Create Item"
+
+    expect(current_path).to eq(item_path(Item.last))
   end
 end
