@@ -14,6 +14,7 @@ class OrdersController < ApplicationController
     if order.save
       items = Item.find(session[:cart].keys.map { |key| key.to_i })
       items.each { |item| order.items << item }
+      session[:cart] = {}
       flash[:success] = "Order was successfully placed"
       redirect_to orders_path
     else
