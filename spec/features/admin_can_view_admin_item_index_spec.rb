@@ -16,9 +16,10 @@ feature "Admin can navigate to '/admin/items'" do
 end
 
 feature "Admin can view admin items index" do
-  let!(:admin) { create(:user, role: 1) }
-  let!(:item)  { create(:item)}
-  let!(:item1)  { create(:item)}
+  let!(:admin)    { create(:user, role: 1) }
+  let!(:category) {create(:category)}
+  let!(:item)     { create(:item, category: category)}
+  let!(:item1)    { create(:item, category: category)}
   scenario "with item details" do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
