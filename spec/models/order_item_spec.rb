@@ -15,7 +15,7 @@ describe OrderItem do
       OrderItem.create(order: order, item: item)
       OrderItem.create(order: order, item: item)
 
-      expect(OrderItem.item_quantity(item.id)).to eq(2)
+      expect(OrderItem.item_quantity(order.id, item.id)).to eq(2)
     end
 
     it ".item_subtotal" do
@@ -26,7 +26,7 @@ describe OrderItem do
       OrderItem.create(order: order, item: item)
       OrderItem.create(order: order, item: item)
 
-      expect(OrderItem.item_subtotal(item.id)).to eq(8.0)
+      expect(OrderItem.item_subtotal(order.id, item.id)).to eq(8.0)
     end
 
     it ".item_total" do

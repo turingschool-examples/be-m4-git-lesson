@@ -20,6 +20,7 @@
     <tr>
       <th>Item Name</th>
       <th>Quantity</th>
+      <th>Price</th>
       <th>Subtotal</th>
     </tr>
   </thead>
@@ -27,12 +28,13 @@
     <% @order.items.uniq.each do |item| %>
     <tr>
       <td><%= link_to "#{item.title}", item_path(item) %></td>
-      <td><%= item.order_items.item_quantity(item.id) %></td>
-      <td><%= number_to_currency(item.order_items.item_subtotal(item.id)) %></td>
+      <td><%= item.order_items.item_quantity(@order.id, item.id) %></td>
+      <td><%= item.order_items.find_by(item_id: item.id).price %></td>
+      <td><%= number_to_currency(item.order_items.item_subtotal(@order.id, item.id)) %></td>
     </tr>
     <% end %>
     <tr class=last-row>
-      <td class="last-row-title" colspan="2">Total:</td>
+      <td class="last-row-title" colspan="3">Total:</td>
       <td><%= number_to_currency(@order.order_items.total(@order.id)) %></td>
     </tr>
   </tbody>

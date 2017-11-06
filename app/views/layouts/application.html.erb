@@ -22,7 +22,7 @@
 
           <%= link_to  "Categories", categories_path %>
           <%= link_to "Cart (#{@cart.total})", cart_path %>
-          <%= link_to "Orders", orders_path %>
+          <%= link_to "My Orders", orders_path %>
 
           <% if current_user %>
             <%=link_to "Log Out", logout_path, method: :delete%>
