@@ -8,7 +8,7 @@ class Order < ApplicationRecord
   enum status: %w(ordered paid cancelled completed)
 
   def format_date(date)
-    date.strftime(format='%m/%d/%Y')
+    date.strftime('%m/%d/%Y')
   end
 
   def self.total_ordered
