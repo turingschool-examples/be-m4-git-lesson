@@ -1,18 +1,14 @@
 <div class="single-order">
-  <div>
-    <h3>Order No: <%= @order.id %></h3>
-  </div>
-  <div>
-    <h3>Status: <%= @order.status %></h3>
-  </div>
+  <p>Order No: <%= @order.id %></p>
+  <p>Status: <%= @order.status %></p>
   <% if @order.status == 3 || @order.status == 4 %>
-    <div>
-        <h3>Updated On: <%= @order.format_date(@order.updated_at)%></h3>
-    </div>
+    <p>Updated On: <%= @order.format_date(@order.updated_at)%></p>
   <% end %>
-  <div>
-    <h3>Placed On: <%= @order.format_date(@order.created_at) %></h3>
-  </div>
+  <p>Placed On: <%= @order.format_date(@order.created_at) %></p>
+  <% if current_admin? %>
+    <p>Order By: <%= @order.user.first_name %> <%= @order.user.last_name %></p>
+    <p>Address: <%= @order.user.address %></p>
+  <% end %>
 </div>
 
 <table class="single-order-items">
