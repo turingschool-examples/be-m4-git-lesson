@@ -20,9 +20,9 @@ RSpec.describe 'user can visit order show page' do
     expect(page).to have_content("ordered")
     expect(page).to have_content(item.title)
     expect(page).to have_link(item.title)
-    expect(page).to have_content("Quantity: 1")
-    expect(page).to have_content("Subtotal: $19.95")
-    expect(page).to have_content("Total: $19.95")
+    expect(page).to have_content("1")
+    expect(page).to have_content("$19.95")
+    expect(page).to have_content("$19.95")
   end
 
   scenario 'and see all items from order' do
@@ -51,13 +51,13 @@ RSpec.describe 'user can visit order show page' do
     expect(page).to have_content("ordered")
     expect(page).to have_content(item1.title)
     expect(page).to have_link(item1.title)
-    expect(page).to have_content("Quantity: 1")
-    expect(page).to have_content("Subtotal: $10.00")
+    expect(page).to have_content("1")
+    expect(page).to have_content("$10.00")
     expect(page).to have_content("ordered")
     expect(page).to have_content(item2.title)
     expect(page).to have_link(item2.title)
-    expect(page).to have_content("Quantity: 2")
-    expect(page).to have_content("Subtotal: $10.00")
-    expect(page).to have_content("Total: $20.00")
+    expect(page).to have_content("2")
+    expect(page).to have_content("$10.00")
+    expect(page).to have_content("$20.00")
   end
 end

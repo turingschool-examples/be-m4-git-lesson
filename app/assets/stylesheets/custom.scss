@@ -364,3 +364,30 @@ table.orders td {
     }
   }
 }
+
+.single-order{
+  width      : 75%;
+  margin-top : 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.single-order-items {
+  width      : 75%;
+  margin-top : 30px;
+  margin-left: auto;
+  margin-right: auto;
+  th {
+    font-size   : 1.2em;
+    font-weight : $semi;
+    text-align: left;
+  }
+  .last-row {
+    border-top: 15px solid transparent;
+    .last-row-title {
+      text-align: right;
+      font-weight: 600;
+      padding-right: 10px;
+    }
+  }
+}
