@@ -10,7 +10,7 @@ RSpec.feature "User can log out" do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
     visit root_path
-    save_and_open_page
+    
     click_on "Log Out"
 
     expect(current_path).to eq(root_path)
