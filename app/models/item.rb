@@ -7,8 +7,8 @@ class Item < ApplicationRecord
             :description,
             :price,
             :status,
-            :category,
-             presence: true
+            :category_id,
+            presence: true
 
   validates_uniqueness_of :title
 
