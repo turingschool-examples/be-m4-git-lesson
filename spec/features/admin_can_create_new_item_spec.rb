@@ -37,11 +37,11 @@ RSpec.describe 'Admin can create new item' do
     expect(page).to have_field("Description")
     expect(page).to have_field("Price")
     expect(page).to have_field("Status")
-    # expect(page).to have_field("Category")
+    expect(page).to have_select("item[category_id]")
     expect(page).to have_button("Create Item")
   end
 
-  xit 'by filling out all the required fields' do
+  it 'by filling out all the required fields' do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
     Category.create(title: "Pretty But Deadly")
@@ -56,9 +56,8 @@ RSpec.describe 'Admin can create new item' do
     select "Pretty But Deadly",  from: "item[category_id]"
     attach_file("item[image]", File.join(Rails.root, '/app/assets/images/FullSizeRender.jpg'))
 
-    save_and_open_page
     click_on "Create Item"
 
-    expect(current_path).to eq(admin_item_path(Item.last))
+    expect(current_path).to eq(admin_items_path)
   end
 end

@@ -15,9 +15,9 @@ class Admin::ItemsController < Admin::BaseController
     @item = Item.new(item_params)
     if @item.save
       flash[:success] = "#{@item.title} successfully created!"
-      redirect_to admin_item_path(@item)
+      redirect_to admin_items_path
     else
-      flash[:notice] = "Item shares one or more of the same attributes as an already existing item!"
+      flash[:notice] = "One or more of your fields are invalid!"
       render :new
     end
   end
@@ -25,6 +25,6 @@ class Admin::ItemsController < Admin::BaseController
   private
 
   def item_params
-    params.require(:item).permit(:title, :price, :status, :category, :image, :description)
+    params.require(:item).permit(:title, :price, :status, :category_id, :image, :description)
   end
 end
