@@ -37,27 +37,28 @@ RSpec.describe 'Admin can create new item' do
     expect(page).to have_field("Description")
     expect(page).to have_field("Price")
     expect(page).to have_field("Status")
-    expect(page).to have_field("Category")
+    # expect(page).to have_field("Category")
     expect(page).to have_button("Create Item")
   end
 
   it 'by filling out all the required fields' do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
+    Category.create(title: "Pretty But Deadly")
     visit admin_dashboard_path
     click_on "Create New Item"
 
     expect(current_path).to eq(new_admin_item_path)
-save_and_open_page
-    fill_in "item[title]",       with: "Night Shade"
+    fill_in "item[title]",       with: "Night Shade Flower"
     fill_in "item[description]", with: "It's poisonous!"
     fill_in "item[price]",       with: "19.95"
     select "Active",             from: "item[status]"
-    select "Pretty But Deadly",  from: "item[category]"
-    fill_in "item[image]",       with: "images/1.jpg"
+    select "Pretty But Deadly",  from: "item[category_id]"
+    attach_file("item[image]", File.join(Rails.root, '/app/assets/images/FullSizeRender.jpg'))
 
+    save_and_open_page
     click_on "Create Item"
 
-    expect(current_path).to eq(item_path(Item.last))
+    expect(current_path).to eq(admin_item_path(Item.last))
   end
 end
