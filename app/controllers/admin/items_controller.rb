@@ -17,7 +17,7 @@ class Admin::ItemsController < Admin::BaseController
       flash[:success] = "#{@item.title} successfully created!"
       redirect_to admin_items_path
     else
-      flash[:notice] = "Item shares one or more of the same attributes as an already existing item!"
+      flash[:notice] = "One or more of your fields are invalid!"
       render :new
     end
   end

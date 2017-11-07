@@ -10,6 +10,8 @@ class Item < ApplicationRecord
             :category_id,
             presence: true
 
+  validates :price, numericality: { greater_than: 0 }
+
   validates_uniqueness_of :title
 
   has_attached_file :image, styles: { medium: "300x300#", thumb: "100x100#" },
