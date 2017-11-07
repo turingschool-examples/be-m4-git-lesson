@@ -3,6 +3,7 @@ class CartsController < ApplicationController
     item = Item.find(params[:item_id])
     @cart.add_item(item.id)
     session[:cart] = @cart.contents
+    flash[:notice] = "#{item.title} has been added to your cart!"
     redirect_to items_path
   end
 
@@ -22,9 +23,11 @@ class CartsController < ApplicationController
     when params[:increment_me]
       @item = Item.find(params[:increment_me])
       @cart.add_item(@item.id)
+      flash[:notice] = "#{@item.title} has been added to your cart!"
     when params[:decrement_me]
       @item = Item.find(params[:decrement_me])
       @cart.decrease_quantity(@item.id)
+      flash[:notice] = "You removed #{@item.title} from your cart!"
     end
     redirect_to cart_path
   end
