@@ -5,6 +5,8 @@
     resource  :dashboard, only: :show, controller: :dashboard
     resources :items,     only: :index
     resources :users,     only: [:show, :edit, :update]
+    resources :items,     only: [:new, :create, :show]
+
 
 
     get '/ordered',   to: 'orders#index'

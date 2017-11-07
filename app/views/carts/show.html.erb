@@ -8,7 +8,7 @@
           <th></th>
           <th>Title</th>
           <th>Price</th>
-          <th>Controls</th>
+          <th>Quantity</th>
           <th>Subtotal</th>
         </tr>
       </thead>
@@ -45,7 +45,7 @@
     <% if current_user %>
       <%= button_to "Checkout", orders_path(current_user), method: :post, class: 'checkout'%>
     <% else %>
-      <%= link_to "You must login to checkout", login_path %>
+      <%= link_to "login or create account to checkout", login_path %>
     <% end %>
   </div>
 <% end %>
