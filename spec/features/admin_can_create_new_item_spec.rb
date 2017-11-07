@@ -41,7 +41,7 @@ RSpec.describe 'Admin can create new item' do
     expect(page).to have_button("Create Item")
   end
 
-  it 'by filling out all the required fields' do
+  xit 'by filling out all the required fields' do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
     Category.create(title: "Pretty But Deadly")
