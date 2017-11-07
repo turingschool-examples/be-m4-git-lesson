@@ -24,6 +24,19 @@ body {
   }
 }
 
+.alert-notice {
+  color      : red;
+  text-align : center;
+  a {
+    font-weight     : 700;
+    color           : red;
+    text-decoration : none;
+  }
+  &:hover {
+    text-decoration : underline;
+  }
+}
+
 nav {
   padding-bottom   : 25px;
   background-color : $blackshadows;
