@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resource  :dashboard, only: :show, controller: :dashboard
     resources :users,     only: [:show, :edit, :update]
-    resources :items,     only: [:new, :create]
+    resources :items,     only: [:new, :create, :show]
 
     get '/ordered',   to: 'orders#index'
     get '/paid',      to: 'orders#index'
