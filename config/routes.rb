@@ -1,4 +1,4 @@
-  Rails.application.routes.draw do
+Rails.application.routes.draw do
   root to:  'landing#index'
 
   namespace :admin do
@@ -6,8 +6,6 @@
     resources :items,     only: :index
     resources :users,     only: [:show, :edit, :update]
     resources :items,     only: [:new, :create, :show]
-
-
 
     get '/ordered',   to: 'orders#index'
     get '/paid',      to: 'orders#index'
@@ -24,7 +22,6 @@
   resources :items,  only: [:index, :show]
   resources :users,  only: [:new, :create]
   resources :orders, only: [:index, :show, :create, :update]
-
 
   get '/categories', to: 'categories#index'
   get '/:category',  to: 'categories#show', param: :slug, as: "category"
