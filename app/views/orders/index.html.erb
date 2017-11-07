@@ -1,20 +1,21 @@
-<h2>Your Orders</h2>
-
 <table class="orders">
-  <thead>
-    <tr>
-      <th>Order Number</th>
-      <th>Order Date</th>
-      <th>View Order</th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @orders.reverse.each do |order|%>
-    <tr>
-      <td><%= order.id %></td>
-      <td><%= order.format_date(order.created_at) %></td>
-      <td><%= button_to "View Order", order_path(order), method: "get" %></td>
-    </tr>
-   <%end%>
-  </tbody>
+  <% if !@orders.empty? %>
+    <thead>
+      <tr>
+        <th>Order Number</th>
+        <th>Order Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.reverse.each do |order|%>
+        <tr>
+          <td><%= order.id %></td>
+          <td><%= order.format_date(order.created_at) %></td>
+          <td><%= button_to "View Order", order_path(order), method: "get" %></td>
+        </tr>
+       <%end%>
+    </tbody>
+  <% else %>
+    <h1>You currently have no orders.<h1>
+  <% end %>
 </table>
