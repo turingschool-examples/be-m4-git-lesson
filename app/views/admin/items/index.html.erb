@@ -1,0 +1,27 @@
+<h1 class="item-index">Items</h1>
+
+<table class="items-table">
+  <% if !@items.empty? %>
+    <thead>
+      <tr>
+        <th>Image</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @items.each do |item|%>
+        <tr>
+          <td><%= image_tag(item.image.url(:thumb))%></td>
+          <td><%= link_to "#{item.title}", item_path(item) %></td>
+          <td><%= item.description%></td>
+          <td><%= item.status%></td>
+          <td><%= button_to "Edit", admin_items_path(item), method: :put%></td>
+        </tr>
+       <%end%>
+    </tbody>
+  <% else %>
+    <h2>There are currently no items.<h2>
+  <% end %>
+</table>

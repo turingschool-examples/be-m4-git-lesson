@@ -1,9 +1,11 @@
-Rails.application.routes.draw do
+  Rails.application.routes.draw do
   root to:  'landing#index'
 
   namespace :admin do
     resource  :dashboard, only: :show, controller: :dashboard
+    resources :items,     only: :index
     resources :users,     only: [:show, :edit, :update]
+
 
     get '/ordered',   to: 'orders#index'
     get '/paid',      to: 'orders#index'

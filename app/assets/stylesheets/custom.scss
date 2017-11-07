@@ -261,11 +261,22 @@ h1, h3, h4 {
 }
 
 table.orders {
-  width : 100%;
-}
+  width: 100%;
 
-table.orders td {
-  text-align : center;
+  th {
+    font-size   : 1.2em;
+    font-weight : $semi;
+    border-top: 40px solid transparent;
+    border-bottom: 20px solid transparent;
+  }
+  td {
+    margin: auto;
+    padding: 5px;
+    font-size: 100%;
+    font: inherit;
+    text-align: center;
+    vertical-align: middle;
+  }
 }
 
 .carts-container {
@@ -394,4 +405,41 @@ table.orders td {
       padding-right: 10px;
     }
   }
+}
+.items-table {
+  th {
+    font-size   : 1.2em;
+    font-weight : $semi;
+    border: 20px solid transparent;
+  }
+
+  td {
+    margin: auto;
+    padding: 20px;
+    font-size: 100%;
+    font: inherit;
+    text-align: center;
+    vertical-align: middle;
+
+    a {
+      margin          : 10px;
+      font-size       : 1.25em;
+      color           : $licorice;
+      text-decoration : none;
+
+      &:hover {
+        font-weight : 600;
+        color       : $blackshadows;
+      }
+    }
+
+    .button_to {
+      padding: 20px;
+    }
+  }
+}
+
+.item-index {
+  margin-top: 20px;
+  margin-left: 20px;
 }
