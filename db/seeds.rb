@@ -1,4 +1,5 @@
 Category.create(title: 'Little Cacti')
+Category.create(title: 'Pretty But Deadly')
 category = Category.all.first
 category.items.create(title: 'Pink Cactus', description: "It has a little flower on top", price: 10.95, image: File.new("#{Rails.root}/app/assets/images/2.jpg"))
 category.items.create(title: 'Pretty Cactus', description: 'It comes in a geometric glass pot.', price: 20.95, image: File.new("#{Rails.root}/app/assets/images/1.jpg"))
