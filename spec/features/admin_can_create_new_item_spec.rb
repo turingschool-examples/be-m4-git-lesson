@@ -53,7 +53,7 @@ save_and_open_page
     fill_in "item[description]", with: "It's poisonous!"
     fill_in "item[price]",       with: "19.95"
     select "Active",             from: "item[status]"
-    select "Pretty But Deadly",    from: "item[category]"
+    select "Pretty But Deadly",  from: "item[category]"
     fill_in "item[image]",       with: "images/1.jpg"
 
     click_on "Create Item"

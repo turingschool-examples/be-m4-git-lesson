@@ -1,0 +1,16 @@
+<%= form_for @item do |f| %>
+  <p><%= f.label             :title %></p>
+  <p><%= f.text_field        :title %></p>
+  <p><%= f.label             :price %></p>
+  <p><%= f.text_field        :price %></p>
+  <p><%= f.label             :status %></p>
+  <p><%= f.select            :status, [['Active', 0], ['Retired', 1]] %></p>
+  <p><%= f.label             :category %></p>
+  <p><%= f.collection_select :category, Category.all, :id, :title %></p>
+  <p><%= f.label             "Image" %></p>
+  <p><%= f.file_field        :image %></p>
+  <p><%= f.label             :description %></p>
+  <p><%= f.text_area         :description %></p>
+
+  <%= f.submit            "Create Item" %>
+<% end %>
