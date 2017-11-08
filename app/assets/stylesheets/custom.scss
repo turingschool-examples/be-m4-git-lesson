@@ -5,10 +5,6 @@ body {
   background  : $bubbles;
   font-family : 'Raleway', sans-serif;
   font-size   : 14px;
-  a, h3 {
-    word-wrap: break-word;
-    max-width: 11em;
-  }
 }
 
 .landing {
@@ -16,17 +12,20 @@ body {
 }
 
 .alert-success {
+  margin-top: 20px;;
   color      : green;
   text-align : center;
   a {
     font-weight     : 700;
     color           : green;
     text-decoration : none;
-  }
-  &:hover {
-    text-decoration : underline;
+    &:hover {
+      text-decoration : underline;
+    }
   }
 }
+
+.alert-error { @extend .alert-success }
 
 .alert-notice {
   color      : red;
@@ -122,18 +121,25 @@ h1, h3, h4 {
     min-height      : 225px;
     width           : 20%;
     margin          : 20px;
-    padding         : 20px;
+    padding         : 10px;
     border          : 2px solid $blackshadows;
     flex-direction  : column;
     justify-content : space-between;
     flex-wrap       : wrap;
     align-items     : center;
-      .image {
-        text-align: center;
-        img {
-          max-width: 95%;
-        }
+    .image {
+      text-align: center;
+      img {
+        max-width: 95%;
       }
+    }
+    a {
+      color           : $middlepurple;
+      text-decoration : none;
+      &:hover {
+        color       : $blackshadows;
+      }
+    }
 
     h3 {
       font-family : $roboto;
@@ -161,16 +167,17 @@ h1, h3, h4 {
 }
 
 .login-page {
-  height          : 80vh;
-  width           : 800px;
-  margin          : auto;
+  margin-top: 50px;
+  display         : flex;
+  flex-direction  : column;
+  justify-content : center;
+  align-items     : center;
 
   .form {
-    position       : relative;
+    width           : 50%;
     display        : flex;
     z-index        : 1;
     min-height     : 500px;
-    width          : 100%;
     padding        : 45px;
     background     : $middlepurple;
     text-align     : center;
@@ -194,7 +201,6 @@ h1, h3, h4 {
       outline       : 0;
       &:focus {
         color  : $xanadu;
-        border : 5px solid $xanadu;
       }
     }
 
@@ -243,11 +249,10 @@ h1, h3, h4 {
 
 .category-item {
   margin          : 10px;
-  font-size       : 24px;
+  font-size       : 18px;
   color           : $licorice;
   text-decoration : none;
   &:hover {
-    font-weight : 600;
     color       : $blackshadows;
   }
 }
@@ -316,7 +321,6 @@ table.orders {
     text-decoration : none;
 
     &:hover {
-      font-weight : 600;
       color       : $blackshadows;
     }
   }
@@ -366,6 +370,14 @@ table.orders {
     font-size        : 1.5em;
     &:hover {
       border : 5px solid $seafoamgreen;
+    }
+  }
+
+  .login-wrap {
+    margin-top: 20px;
+    .login-to-checkout {
+      width: 300px;
+      text-transform: uppercase;
     }
   }
 }
@@ -435,10 +447,10 @@ table.orders {
 
   a {
     text-decoration: none;
+    color: $middlepurple;
   }
 
   a:hover {
-    font-weight: bold;
     color: $xanadu;
   }
 }
@@ -478,4 +490,41 @@ table.orders {
 .item-index {
   margin-top: 20px;
   margin-left: 20px;
+}
+
+
+.admin-form-container {
+  @extend .login-page;
+  .form {
+    input {
+      margin-top: 20px;
+    }
+    select {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      width: 100%;
+      padding: 20px;
+      border: none;
+      height: 55px;
+      text-align: center;
+      text-align-last: center;
+    }
+    textarea {
+      width: 100%;
+      border: none;
+      border-radius: 4px;
+      height: 55px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    label {
+      color: $antiflashwhite;
+      margin: 10px;
+    }
+
+    input[name="commit"]:hover {
+      color: $blackshadows;
+      cursor: pointer;
+    }
+  }
 }

@@ -1,10 +1,10 @@
 <div class="single-order">
   <p>Order No: <%= @order.id %></p>
-  <p>Status: <%= @order.status %></p>
-  <% if @order.status == 3 || @order.status == 4 %>
+  <p>Status: <%= @order.status.capitalize %></p>
+  <p>Placed On: <%= @order.format_date(@order.created_at) %></p>
+  <% if @order.status == "completed" || @order.status == "cancelled" %>
     <p>Updated On: <%= @order.format_date(@order.updated_at)%></p>
   <% end %>
-  <p>Placed On: <%= @order.format_date(@order.created_at) %></p>
   <% if current_admin? %>
     <p>Order By: <%= @order.user.first_name %> <%= @order.user.last_name %></p>
     <p>Address: <%= @order.user.address %></p>
@@ -25,7 +25,7 @@
     <tr>
       <td><%= link_to "#{item.title}", item_path(item) %></td>
       <td><%= item.order_items.item_quantity(@order.id, item.id) %></td>
-      <td><%= item.order_items.find_by(item_id: item.id).price %></td>
+      <td><%= number_to_currency(item.order_items.find_by(item_id: item.id).price) %></td>
       <td><%= number_to_currency(item.order_items.item_subtotal(@order.id, item.id)) %></td>
     </tr>
     <% end %>

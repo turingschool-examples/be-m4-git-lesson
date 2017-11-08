@@ -1,6 +1,7 @@
 Category.create(title: 'Little Cacti')
 Category.create(title: 'Pretty But Deadly')
 category = Category.all.first
+# TODO => short description maybe?
 category.items.create(title: 'Pink Cactus', description: "It has a little flower on top", price: 10.95, image: File.new("#{Rails.root}/app/assets/images/2.jpg"))
 category.items.create(title: 'Pretty Cactus', description: 'It comes in a geometric glass pot.', price: 20.95, image: File.new("#{Rails.root}/app/assets/images/1.jpg"))
 category.items.create(title: 'Basic Cactus', description: 'It comes in a ceramic pot.', price: 6.95, image: File.new("#{Rails.root}/app/assets/images/3.jpg"))
@@ -25,6 +26,5 @@ category.items.create(title: 'the', description: 'It comes in a ceramic pot.', p
 category.items.create(title: 'coconut', description: 'It comes in a ceramic pot.', price: 6.95, image: File.new("#{Rails.root}/app/assets/images/3.jpg"))
 category.items.create(title: 'moana', description: 'It comes in a ceramic pot.', price: 6.95, image: File.new("#{Rails.root}/app/assets/images/3.jpg"))
 category.items.create(title: 'super long tite', description: 'It  in a ceramic pot.It  in a ceramic pot.It  in a ceramic pot.It in a ceramic pot.
-It in a ceramic pot.It in a ceramic pot.It in a ceramic pot.It in a ceramic pot.It in a ceramic pot.It in a ceramic pot.It in a ceramic pot.
-It in a ceramic pot.It in a ceramic pot.It in a ceramic pot.It  in a ceramic pot.It  in a ceramic pot.It  in a ceramic pot.It  in a ceramic pot.',
+It in a ceramic pot.It in a ceramic pot.It in a ceramic pot.It in a ',
 price: 6.95, image: File.new("#{Rails.root}/app/assets/images/3.jpg"))

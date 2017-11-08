@@ -1,16 +1,15 @@
-
-<%= form_for([:admin, current_user]) do |f| %>
-  <%= f.label      :email %>
-  <%= f.text_field :email %>
-
-  <%= f.label      :first_name %>
-  <%= f.text_field :first_name %>
-
-  <%= f.label      :last_name %>
-  <%= f.text_field :last_name %>
-
-  <%= f.label      :address %>
-  <%= f.text_field :address %>
-
-  <%= f.submit "Update" %>
-<% end %>
+<div class='admin-form-container'>
+  <div class='form'>
+    <%= form_for([:admin, current_user]) do |f| %>
+      <%= f.label      :email %>
+      <%= f.text_field :email %>
+      <%= f.label      :first_name %>
+      <%= f.text_field :first_name %>
+      <%= f.label      :last_name %>
+      <%= f.text_field :last_name %>
+      <%= f.label      :address %>
+      <%= f.text_field :address %>
+      <%= f.submit "Update" %>
+    <% end %>
+  </div>
+</div>

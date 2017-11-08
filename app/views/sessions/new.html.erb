@@ -7,7 +7,7 @@
         <%= f.password_field :password, placeholder: 'PASSWORD' %>
         <%= f.submit "Submit", class: 'submit' %>
       <% end %>
-      <span>Or, If you have no account: </span><%= link_to "Register", new_user_path %>
+      <%= link_to "Create Account", new_user_path %>
     </div>
   </div>
 </div>
