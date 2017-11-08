@@ -10,29 +10,7 @@
 
   <body>
     <nav>
-      <div class="store-name">
-        <%= link_to image_tag("logo.png", :alt => "logo"), root_path, class: 'root-image' %>
-        <%= link_to  "The Conservatory", items_path %>
-        <div class='nav-links'>
-          <% if current_admin? %>
-            <h2>Welcome, <%= link_to  current_user.first_name, admin_dashboard_path%></h2>
-            <h2><%= link_to "Account", admin_user_path(current_user) %></h2>
-          <% elsif current_user %>
-            <h2>Welcome, <%= link_to current_user.first_name, dashboard_path%></h2>
-            <%= link_to "My Orders", orders_path %>
-          <% end %>
-          <%= link_to  "ALL THE THINGS", items_path %>
-          <%= link_to  "Categories", categories_path %>
-          <%= link_to "Cart (#{@cart.total})", cart_path %>
-
-          <% if current_user %>
-            <%=link_to "Log Out", logout_path, method: :delete%>
-          <% else %>
-            <%= link_to "Log In", login_path %>
-          <% end %>
-
-        </div>
-      </div>
+      <%= render partial: "shared/nav" %>
     </nav>
     <% flash.each do |type, message| %>
       <%= content_tag :div, message.html_safe, class: "alert alert-#{type}" %>
