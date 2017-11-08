@@ -1,9 +1,10 @@
 <div class='items-container'>
   <% @items.each.with_index do |item, index| %>
     <div class="items items-<%= index %>">
-      <h3><%= item.title %></h3>
-      <p><%= number_to_currency(item.price) %></p>
+      <h3><%= link_to  item.title, item_path(item) %></h3>
       <div class="image"><%= link_to image_tag(item.image.url(:thumb)), item_path(item) %></div>
+      <p><%= item.description %></p>
+      <p><%= number_to_currency(item.price) %></p>
       <%= button_to "Add to Cart", cart_path(item_id: item.id) %>
     </div>
   <% end %>

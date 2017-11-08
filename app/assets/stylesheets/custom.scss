@@ -122,18 +122,26 @@ h1, h3, h4 {
     min-height      : 225px;
     width           : 20%;
     margin          : 20px;
-    padding         : 20px;
+    padding         : 10px;
     border          : 2px solid $blackshadows;
     flex-direction  : column;
     justify-content : space-between;
     flex-wrap       : wrap;
     align-items     : center;
-      .image {
-        text-align: center;
-        img {
-          max-width: 95%;
-        }
+    .image {
+      text-align: center;
+      img {
+        max-width: 95%;
       }
+    }
+    a {
+      color           : $middlepurple;
+      text-decoration : none;
+
+      &:hover {
+        color       : $blackshadows;
+      }
+    }
 
     h3 {
       font-family : $roboto;
