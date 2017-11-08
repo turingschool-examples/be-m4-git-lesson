@@ -491,3 +491,40 @@ table.orders {
   margin-top: 20px;
   margin-left: 20px;
 }
+
+
+.admin-form-container {
+  @extend .login-page;
+  .form {
+    input {
+      margin-top: 20px;
+    }
+    select {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      width: 100%;
+      padding: 20px;
+      border: none;
+      height: 55px;
+      text-align: center;
+      text-align-last: center;
+    }
+    textarea {
+      width: 100%;
+      border: none;
+      border-radius: 4px;
+      height: 55px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    label {
+      color: $antiflashwhite;
+      margin: 10px;
+    }
+
+    input[name="commit"]:hover {
+      color: $blackshadows;
+      cursor: pointer;
+    }
+  }
+}
