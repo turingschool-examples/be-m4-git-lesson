@@ -7,9 +7,7 @@ feature "Admin can navigate to '/admin/items'" do
 
     visit admin_dashboard_path
 
-    expect(page).to have_link("View All Items")
-
-    click_on "View All Items"
+    click_on "Items"
 
     expect(current_path).to eq(admin_items_path)
   end
