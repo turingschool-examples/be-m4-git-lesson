@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
   private
 
   def flash_login(user)
-    flash[:notice] = "Logged in as #{user.first_name}"
+    flash[:success] = "Logged in as #{user.first_name}"
   end
 
   def set_session(user)

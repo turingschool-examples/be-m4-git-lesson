@@ -12,7 +12,7 @@ body {
 }
 
 .alert-success {
-  margin-top: 20px;
+  margin-top: 20px;;
   color      : green;
   text-align : center;
   a {
@@ -24,6 +24,8 @@ body {
     }
   }
 }
+
+.alert-error { @extend .alert-success }
 
 .alert-notice {
   color      : red;
@@ -165,16 +167,17 @@ h1, h3, h4 {
 }
 
 .login-page {
-  height          : 80vh;
-  width           : 800px;
-  margin          : auto;
+  margin-top: 50px;
+  display         : flex;
+  flex-direction  : column;
+  justify-content : center;
+  align-items     : center;
 
   .form {
-    position       : relative;
+    width           : 50%;
     display        : flex;
     z-index        : 1;
     min-height     : 500px;
-    width          : 100%;
     padding        : 45px;
     background     : $middlepurple;
     text-align     : center;
@@ -198,7 +201,6 @@ h1, h3, h4 {
       outline       : 0;
       &:focus {
         color  : $xanadu;
-        border : 5px solid $xanadu;
       }
     }
 
@@ -445,10 +447,10 @@ table.orders {
 
   a {
     text-decoration: none;
+    color: $middlepurple;
   }
 
   a:hover {
-    font-weight: bold;
     color: $xanadu;
   }
 }

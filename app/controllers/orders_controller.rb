@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
     if order.save
       order.create_order_items(session[:cart])
       session[:cart] = {}
-      flash[:success] = "Order was successfully placed"
+      flash[:success] = "Order was successfully placed."
       redirect_to orders_path
     else
       flash[:error] = "An error occured please replace your order."
