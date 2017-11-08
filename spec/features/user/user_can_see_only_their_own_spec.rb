@@ -11,7 +11,7 @@ RSpec.describe 'Users can only see their own data' do
     expect(current_path).to eq("/login")
     expect(page).to have_content("Log In")
     expect(page).to have_button("Submit")
-    expect(page).to have_link("Register")
+    expect(page).to have_link("Create Account")
 
     fill_in "session[email]",    with: "#{user.email}"
     fill_in "session[password]", with: "#{user.password}"
@@ -61,7 +61,7 @@ RSpec.describe 'Users can only see their own data' do
   it 'user cannot make themself an admin' do
     visit login_path
 
-    click_on "Register"
+    click_on "Create Account"
 
     fill_in "user[first_name]", with: "Emma"
     fill_in "user[last_name]",  with: "Swan"

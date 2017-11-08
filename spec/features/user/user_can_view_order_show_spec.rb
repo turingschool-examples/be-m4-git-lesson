@@ -17,7 +17,7 @@ RSpec.describe 'user can visit order show page' do
 
     visit order_path(order)
 
-    expect(page).to have_content("ordered")
+    expect(page).to have_content("Ordered")
     expect(page).to have_content(item.title)
     expect(page).to have_link(item.title)
     expect(page).to have_content("1")
@@ -48,12 +48,12 @@ RSpec.describe 'user can visit order show page' do
 
     visit order_path(order)
 
-    expect(page).to have_content("ordered")
+    expect(page).to have_content("Ordered")
     expect(page).to have_content(item1.title)
     expect(page).to have_link(item1.title)
     expect(page).to have_content("1")
     expect(page).to have_content("$10.00")
-    expect(page).to have_content("ordered")
+    expect(page).to have_content("Ordered")
     expect(page).to have_content(item2.title)
     expect(page).to have_link(item2.title)
     expect(page).to have_content("2")
