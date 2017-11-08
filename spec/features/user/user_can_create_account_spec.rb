@@ -4,9 +4,9 @@ RSpec.describe 'User can create an account' do
   scenario 'unregistered can register for account' do
     visit login_path
 
-    expect(page).to have_link("Register")
+    expect(page).to have_link("Create Account")
 
-    click_on "Register"
+    click_on "Create Account"
 
     expect(current_path).to eq(new_user_path)
 

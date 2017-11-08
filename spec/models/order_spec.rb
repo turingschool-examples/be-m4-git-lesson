@@ -55,7 +55,7 @@ RSpec.describe Order do
 
       expect(comparison[0].to_i).to be_between(0, 13).exclusive
       expect(comparison[1].to_i).to be_between(0, 32).exclusive
-      expect(comparison[2].length).to eq(4)
+      expect(comparison[2].length).to eq(16)
       expect(comparison[2].to_i).to be_kind_of(Integer)
     end
 

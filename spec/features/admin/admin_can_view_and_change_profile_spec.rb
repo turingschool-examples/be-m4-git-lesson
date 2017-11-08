@@ -16,7 +16,7 @@ RSpec.describe 'Admin can visit profile page' do
     expect(page).to have_content("Welcome, #{admin.first_name}")
     expect(page).to have_content("Log Out")
 
-    click_on "Account"
+    click_on "User Profile"
 
     expect(current_path).to eq("/admin/users/#{admin.id}")
     expect(page).to have_content("Position: Administrator")
@@ -33,15 +33,16 @@ RSpec.describe 'Admin can visit profile page' do
     fill_in "session[password]", with: "#{admin.password}"
 
     click_on "Submit"
-    click_on "Account"
 
-    expect(page).to have_link("Edit Profile")
+    expect(current_path).to eq('/admin/dashboard')
+    expect(page).to have_content("Welcome, #{admin.first_name}")
+    expect(page).to have_content("Log Out")
 
+    click_on "User Profile"
     click_on "Edit Profile"
 
     expect(current_path).to eq(edit_admin_user_path(admin))
     expect(page).to have_content("Welcome, #{admin.first_name}")
-    expect(page).to have_content("Account")
     expect(find_field('Email').value).to eq("#{admin.email}")
     expect(find_field('First name').value).to eq("#{admin.first_name}")
     expect(find_field('Last name').value).to eq("#{admin.last_name}")
@@ -58,7 +59,6 @@ RSpec.describe 'Admin can visit profile page' do
     expect(current_path).to eq("/admin/users/#{admin.id}")
     expect(page).to have_content("Profile successfully updated!")
     expect(page).to have_content("Welcome, Emma")
-    expect(page).to have_content("Account")
     expect(page).to have_content("Position: Administrator")
     expect(page).to have_content("Name: Emma Swan")
     expect(page).to have_content("Email: emma@swan.com")

@@ -1,8 +1,9 @@
-<%# TODO STYLE THIS   %>
 <div class='form'>
   <%= form_for([:admin, @item]) do |f| %>
     <%= f.label             :title %>
     <%= f.text_field        :title %>
+    <%= f.label             :description %>
+    <%= f.text_area         :description %>
     <%= f.label             :price %>
     <%= f.text_field        :price %>
     <%= f.label             :status %>
@@ -11,8 +12,6 @@
     <%= f.collection_select :category_id, Category.all, :id, :title %>
     <%= f.label             "Image" %>
     <%= f.file_field        :image %>
-    <%= f.label             :description %>
-    <%= f.text_area         :description %>
     <%= f.submit %>
   <% end %>
 </div>
