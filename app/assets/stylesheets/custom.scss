@@ -5,10 +5,6 @@ body {
   background  : $bubbles;
   font-family : 'Raleway', sans-serif;
   font-size   : 14px;
-  a, h3 {
-    word-wrap: break-word;
-    max-width: 11em;
-  }
 }
 
 .landing {
@@ -323,7 +319,6 @@ table.orders {
     text-decoration : none;
 
     &:hover {
-      font-weight : 600;
       color       : $blackshadows;
     }
   }
@@ -373,6 +368,14 @@ table.orders {
     font-size        : 1.5em;
     &:hover {
       border : 5px solid $seafoamgreen;
+    }
+  }
+
+  .login-wrap {
+    margin-top: 20px;
+    .login-to-checkout {
+      width: 300px;
+      text-transform: uppercase;
     }
   }
 }

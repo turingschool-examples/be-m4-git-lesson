@@ -7,9 +7,11 @@
         <tr>
           <th></th>
           <th>Title</th>
+          <th>Description</th>
           <th>Price</th>
           <th>Quantity</th>
           <th>Subtotal</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -21,6 +23,7 @@
           <td>
             <%= link_to  item.title, item_path(item) %>
           </td>
+          <td><%= item.description %></td>
           <td>
             <%= number_to_currency(item.price) %>
           </td>
@@ -29,23 +32,23 @@
               <%= button_to "-",cart_path(decrement_me: item), method: :patch %>
               x<%= @cart.count_of(item.id) %>
               <%= button_to "+",cart_path(increment_me: item), method: :patch %>
-              <%= button_to "Remove", cart_path(item_id: item), method: :delete %>
             </div>
           </td>
           <td>
             <p><%= number_to_currency(@cart.item_subtotal(item.id)) %></p>
           </td>
+          <td>
+            <%= button_to "Remove", cart_path(item_id: item), method: :delete %>
+          </td>
         </tr>
       <% end %>
       </tbody>
     </table>
-    <h1>
-        Total Price: <%= number_to_currency(@cart.cart_total_price) %>
-    </h1>
+    <h1>Total Price: <%= number_to_currency(@cart.cart_total_price) %></h1>
     <% if current_user %>
       <%= button_to "Checkout", orders_path(current_user), method: :post, class: 'checkout'%>
     <% else %>
-      <%= link_to "login or create account to checkout", login_path %>
+      <p class='login-wrap'><%= link_to "login or create account to checkout", login_path, class: "login-to-checkout" %></p>
     <% end %>
   </div>
 <% end %>
