@@ -5,6 +5,10 @@ body {
   background  : $bubbles;
   font-family : 'Raleway', sans-serif;
   font-size   : 14px;
+  a, h3 {
+    word-wrap: break-word;
+    max-width: 11em;
+  }
 }
 
 .landing {
@@ -124,6 +128,12 @@ h1, h3, h4 {
     justify-content : space-between;
     flex-wrap       : wrap;
     align-items     : center;
+      .image {
+        text-align: center;
+        img {
+          max-width: 95%;
+        }
+      }
 
     h3 {
       font-family : $roboto;
@@ -297,6 +307,10 @@ table.orders {
   flex-direction : column;
   align-items    : center;
 
+  td {
+    vertical-align: middle;
+  }
+
   a {
     color           : $licorice;
     text-decoration : none;
@@ -417,6 +431,15 @@ table.orders {
       font-weight: 600;
       padding-right: 10px;
     }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    font-weight: bold;
+    color: $xanadu;
   }
 }
 .items-table {
