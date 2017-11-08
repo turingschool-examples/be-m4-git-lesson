@@ -3,7 +3,7 @@ class CartsController < ApplicationController
     item = Item.find(params[:item_id])
     @cart.add_item(item.id)
     session[:cart] = @cart.contents
-    flash[:success] = "<a href=#{item_path(item)}>#{item.title}</a>  has been added to your cart!"
+    flash[:success] = "<a href=#{item_path(item)}>#{item.title}</a> <span>has been added to your cart!</span>"
     redirect_to items_path
   end
 

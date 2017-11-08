@@ -33,10 +33,10 @@
 
         </div>
       </div>
-        <% flash.each do |type, message| %>
-          <%= content_tag :div, message.html_safe, class: "alert alert-#{type}" %>
-        <% end %>
     </nav>
+    <% flash.each do |type, message| %>
+      <%= content_tag :div, message.html_safe, class: "alert alert-#{type}" %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

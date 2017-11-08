@@ -16,15 +16,16 @@ body {
 }
 
 .alert-success {
+  margin-top: 20px;
   color      : green;
   text-align : center;
   a {
     font-weight     : 700;
     color           : green;
     text-decoration : none;
-  }
-  &:hover {
-    text-decoration : underline;
+    &:hover {
+      text-decoration : underline;
+    }
   }
 }
 
@@ -137,7 +138,6 @@ h1, h3, h4 {
     a {
       color           : $middlepurple;
       text-decoration : none;
-
       &:hover {
         color       : $blackshadows;
       }
@@ -251,11 +251,10 @@ h1, h3, h4 {
 
 .category-item {
   margin          : 10px;
-  font-size       : 24px;
+  font-size       : 18px;
   color           : $licorice;
   text-decoration : none;
   &:hover {
-    font-weight : 600;
     color       : $blackshadows;
   }
 }
