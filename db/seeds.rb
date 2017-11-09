@@ -28,3 +28,4 @@ category4.items.create(title: 'Common Shrub',    description: 'Grows Very Quickl
 category3.items.create(title: 'Cucumber Cactus', description: 'Beware the spikes',               price: 20.55, image: File.new("#{Rails.root}/app/assets/images/4.jpg"))
 category3.items.create(title: 'Bloomin Cactus',  description: 'Purple Flowers Bloom Year Round', price: 12.45, image: File.new("#{Rails.root}/app/assets/images/3.jpg"))
 category3.items.create(title: 'Bubble Cactus',   description: 'Pink Flower on Top',              price: 22.45, image: File.new("#{Rails.root}/app/assets/images/2.jpg"))
+
