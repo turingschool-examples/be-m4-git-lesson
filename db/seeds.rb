@@ -1,5 +1,5 @@
-Category.destroy_all
 Item.destroy_all
+Category.destroy_all
 
 admin     = User.create(first_name: 'Django', last_name: 'Unchained', email: 'Django', address: '1331 17th St ll100, Denver, CO 80202', password: 'django', role: 1)
 category1 = Category.create(title: 'Poisonous')
