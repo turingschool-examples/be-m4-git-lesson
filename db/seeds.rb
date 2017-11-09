@@ -13,7 +13,7 @@ category1.items.create(title: 'Danger Lily',     description: 'Deadly Red Flower
 category1.items.create(title: 'Venus Fly Trap',  description: 'Must Feed Daily',                 price: 6.95,  image: File.new("#{Rails.root}/app/assets/images/20.jpg"))
 category1.items.create(title: 'Black Flower',    description: 'Use Gloves for Care',             price: 30.55, image: File.new("#{Rails.root}/app/assets/images/17.jpg"))
 category2.items.create(title: 'Big Bottom Palm', description: 'Give Lots of Sun',                price: 15.95, image: File.new("#{Rails.root}/app/assets/images/18.jpg"))
-category2.items.create(title: 'Skinny Palm',     description: 'Requires Water 3 Times Daily',    price: 18.55, image: File.new("#{Rails.root}/app/assets/images/16.jpg"))
+category2.items.create(title: 'Skinny Palm',     description: 'Requires Water 3 Times Daily',    price: 18.55, image: File.new("#{Rails.root}/app/assets/images/16.JPG"))
 category2.items.create(title: 'Prickly Palm',    description: 'Handle with Care',                price: 30.85, image: File.new("#{Rails.root}/app/assets/images/7.jpg"))
 category2.items.create(title: 'Sandy Palm',      description: 'Water Once a Month',              price: 28.80, image: File.new("#{Rails.root}/app/assets/images/5.jpg"))
 category1.items.create(title: 'Red Anthurium',   description: 'Red for Danger',                  price: 15.75, image: File.new("#{Rails.root}/app/assets/images/8.jpg"))
