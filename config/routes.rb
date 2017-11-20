@@ -23,9 +23,9 @@ Rails.application.routes.draw do
   get 'admin/completed', to: 'admin/orders#index', as: 'admin_completed'
 
   # session
-  get    '/login',     to: 'sessions#new'
-  post   '/login',     to: 'sessions#create'
-  delete '/logout',    to: 'sessions#destroy'
+  get    '/login',  to: 'sessions#new'
+  post   '/login',  to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 
   # cart
   get    'cart/new',  to: 'carts#new',   as: 'new_cart'
