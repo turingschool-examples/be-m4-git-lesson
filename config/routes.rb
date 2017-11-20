@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   post   '/login',     to: 'sessions#create'
   delete '/logout',    to: 'sessions#destroy'
   get    '/dashboard', to: 'users#show'
+  # map.login '/login', :controller => 'sessions', :action => 'new'
 
   resource  :cart
   resources :items,  only: [:index, :show]

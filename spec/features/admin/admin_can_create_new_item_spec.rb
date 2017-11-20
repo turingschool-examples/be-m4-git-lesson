@@ -54,7 +54,7 @@ RSpec.describe 'Admin can create new item' do
     fill_in "item[price]",       with: "19.95"
     select "Active",             from: "item[status]"
     select "Pretty But Deadly",  from: "item[category_id]"
-    attach_file("item[image]", File.join(Rails.root, '/app/assets/images/FullSizeRender.jpg'))
+    attach_file("item[image]", File.join(Rails.root, '/app/assets/images/1.jpg'))
 
     click_on "Create Item"
 

@@ -7,7 +7,7 @@ RSpec.describe 'user can visit order show page' do
     item = category.items.create(title: "Night Shade",
                                  description: "Filled with poison, but blessed with beauty and grace.",
                                  price: 19.95,
-                                 image_file_name: "FullSizeRender.jpg",
+                                 image_file_name: "1.jpg",
                                  image_content_type: "image/jpeg",
                                  image_file_size: 346843)
     user = create(:user)
@@ -30,13 +30,13 @@ RSpec.describe 'user can visit order show page' do
     item1 = category.items.create(title: "Night Shade",
                                  description: "Filled with poison, but blessed with beauty and grace.",
                                  price: 10.00,
-                                 image_file_name: "FullSizeRender.jpg",
+                                 image_file_name: "1.jpg",
                                  image_content_type: "image/jpeg",
                                  image_file_size: 346843)
     item2 = category.items.create(title: "Hemlock",
                                 description: "Leafy Greens",
                                 price: 5.00,
-                                image_file_name: "FullSizeRender.jpg",
+                                image_file_name: "1.jpg",
                                 image_content_type: "image/jpeg",
                                 image_file_size: 346843)
     user = create(:user)
