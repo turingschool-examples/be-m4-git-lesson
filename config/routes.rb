@@ -6,9 +6,9 @@ Rails.application.routes.draw do
 
   get   '/admin/items',          to: 'admin/items#index',    as: 'admin_items'
   get   '/admin/items/new',      to: 'admin/items#new',      as: 'new_admin_item'
-  post  '/admin/items',          to: 'admin/items#create'
   get   '/admin/items/:id/edit', to: 'admin/items#edit',     as: 'edit_admin_item'
   get   '/admin/items/:id',      to: 'admin/items#show',     as: 'admin_item'
+  post  '/admin/items',          to: 'admin/items#create'
   patch '/admin/items/:id',      to: 'admin/items#update'
   put   '/admin/items/:id',      to: 'admin/items#update'
 
