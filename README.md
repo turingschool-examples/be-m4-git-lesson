@@ -1,4 +1,7 @@
 ### Wireframin'
+
+Rebasin'
+
 #### Schema
 ![schema](https://content.screencast.com/users/dionew1/folders/Jing/media/9fe2493a-c952-4179-ae3e-ffeeebe9cc80/00000063.png)
 #### Palette
@@ -11,3 +14,8 @@
 ![create user](http://g.recordit.co/gMVQ5COCtG.gif)
 #### Cart
 ![index](http://g.recordit.co/YqznDMGdhY.gif)
+
+
+Hi there, here are some words
+
+More words!
