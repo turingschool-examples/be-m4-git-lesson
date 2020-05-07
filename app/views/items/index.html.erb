@@ -5,6 +5,7 @@
       <div class="image"><%= link_to image_tag(item.image.url(:thumb)), item_path(item) %></div>
       <p>Change 1</p>
       <p>Change 2</p>
+      <p>Change 3</p>
       <p><%= item.description %></p>
       <p><%= number_to_currency(item.price) %></p>
       <%= button_to "Add to Cart", cart_path(item_id: item.id) %>
