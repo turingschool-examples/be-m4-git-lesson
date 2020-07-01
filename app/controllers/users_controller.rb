@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       redirect_to dashboard_path(id: user.id)
       flash[:success] = "Logged in as #{user.first_name}"
     else
-      flash[:notice] = "Unable to create account!"
+      flash[:notice] = "Will not make account!"
       render :new
     end
   end
