@@ -14,3 +14,5 @@
 ### Rebase workshop
 
 commit 1 => here
+
+commit 2
