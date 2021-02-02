@@ -12,6 +12,6 @@
 #### Cart
 ![index](http://g.recordit.co/YqznDMGdhY.gif)
 
-git rebase content 1
+
 
 
