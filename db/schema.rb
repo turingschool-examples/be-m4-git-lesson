@@ -9,9 +9,11 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
+
 # update one
 # update two
 # update three
+# Commit 1 on branch 2
 
 ActiveRecord::Schema.define(version: 20171108000258) do
 
