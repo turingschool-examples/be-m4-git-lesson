@@ -11,13 +11,6 @@ class CartsController < ApplicationController
     @items = @cart.retrieve_items
   end
 
-  def update
-    case
-    when params[:increment_me]
-      @item = Item.find(params[:increment_me])
-      @cart.add_item(@item.id)
-      flash[:success] = "<a href=#{item_path(@item)}>#{@item.title}</a> Quantity updated: #{@cart.count_of(@item.id)}"
-
     when params[:decrement_me]
       @item = Item.find(params[:decrement_me])
       @cart.decrease_quantity(@item.id)
