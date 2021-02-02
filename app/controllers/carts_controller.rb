@@ -11,13 +11,6 @@ class CartsController < ApplicationController
     @items = @cart.retrieve_items
   end
 
-  def destroy
-    @item = Item.find(params[:item_id])
-    @cart.remove_item(params[:item_id])
-    flash[:success] = "Successfully removed <a href=#{item_path(@item)}>#{@item.title}</a> from your cart."
-    redirect_to cart_path
-  end
-
   def update
     case
     when params[:increment_me]
