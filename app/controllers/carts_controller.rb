@@ -36,4 +36,8 @@ class CartsController < ApplicationController
     end
     redirect_to cart_path
   end
+  
+  def total_items(items)
+    @total_items = items
+  end
 end
