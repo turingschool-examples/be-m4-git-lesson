@@ -13,10 +13,6 @@ class Cart
     contents.map { |key, value| Item.find(key).price * value }.sum
   end
 
-  def retrieve_items
-    contents.keys.map { |key| Item.find(key) }
-  end
-
   def decrease_quantity(id)
     quantity = (contents[id.to_s] = contents[id.to_s] - 1)
     remove_item(id) if quantity == 0
