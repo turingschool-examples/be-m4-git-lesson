@@ -21,8 +21,4 @@ class Cart
   def remove_item(id)
     contents.delete(id.to_s)
   end
-
-  def item_subtotal(id)
-    Item.find(id).price * count_of(id)
-  end
 end
