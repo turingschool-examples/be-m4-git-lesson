@@ -14,9 +14,6 @@ class Cart
     remove_item(id) if quantity == 0
   end
 
-  def total
-    contents.values.sum
-  end
 
   def remove_item(id)
     contents.delete(id.to_s)
