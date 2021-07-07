@@ -22,10 +22,6 @@ class Cart
     remove_item(id) if quantity == 0
   end
 
-  def count_of(id)
-    contents[id.to_s]
-  end
-
   def total
     contents.values.sum
   end
